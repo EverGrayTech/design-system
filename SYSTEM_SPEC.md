@@ -4,8 +4,6 @@
 ### Purpose
 This specification defines the shared visual system for `EverGray Tech`, both it's website [evergraytech.com](https://evergraytech.com) and all the company's applications. It establishes a consistent design language that can be implemented across products without additional interpretation.
 
----
-
 ## 1. Design Intent
 
 The visual system should communicate:
@@ -28,8 +26,6 @@ The system must feel advanced without feeling trendy. It must feel refined witho
 ### Behavioral model
 The company website is the slightly more cinematic expression of the system.
 The applications are the stricter expression of the system.
-
----
 
 ## 2. Brand Character
 
@@ -57,8 +53,6 @@ The applications are the stricter expression of the system.
 ### Product posture
 The products are customer-facing workflow and productivity applications, primarily serving developers and technical users. Interfaces should support concentration, speed, and confidence.
 
----
-
 ## 3. Core Visual Principles
 
 ### 3.1 Clarity over flourish
@@ -78,8 +72,6 @@ Surfaces should feel separated through tonal control and subtle edge response ra
 
 ### 3.6 Premium means composed
 The interface should feel expensive because it is controlled, balanced, and intentional. Never because it is loud.
-
----
 
 ## 4. Overall Style Direction
 
@@ -101,8 +93,6 @@ The visual language should feel:
 5. motion
 
 Accent and motion must never carry the interface by themselves.
-
----
 
 ## 5. Color System
 
@@ -142,8 +132,6 @@ Semantic feedback states must remain clear and independent from brand accent. Su
 ### 5.5 Color behavior
 The interface should be mostly neutral. Color should punctuate the experience, not saturate it.
 
----
-
 ## 6. Surface Model
 
 ### 6.1 Surface language
@@ -173,8 +161,6 @@ Depth should not rely on:
 ### 6.4 Structural lines
 Dividers and line work may be more deliberate than surface edges, but only when they serve structure or information. This allows line-based graphics, diagrams, and layout separators to feel purposeful rather than redundant.
 
----
-
 ## 7. Typography
 
 ### 7.1 Typographic direction
@@ -203,8 +189,6 @@ Hierarchy should not depend on decorative styling.
 ### 7.4 Density
 The applications should support information efficiency without feeling crowded. Typography should allow compactness where needed, but the system should never feel compressed or frantic.
 
----
-
 ## 8. Geometry and Shape
 
 ### 8.1 Geometric alignment
@@ -225,8 +209,6 @@ Use restrained rounding. Avoid over-rounded consumer SaaS softness and avoid org
 ### 8.4 Graphic motifs
 Illustration, diagrams, and support graphics should follow the same geometric discipline as the interface. They should use line, structure, and controlled accent rather than decorative abstraction.
 
----
-
 ## 9. Layout and Spacing
 
 ### 9.1 Layout character
@@ -242,8 +224,6 @@ The system should avoid both extremes:
 
 ### 9.4 Composition
 The website may use more dramatic composition than the applications, but both should remain controlled and geometric.
-
----
 
 ## 10. Motion
 
@@ -274,8 +254,6 @@ The website may use subtle animated gradient fields or restrained atmospheric mo
 
 ### 10.5 Application motion
 Applications should use a quieter motion profile focused on responsiveness and state clarity.
-
----
 
 ## 11. Website vs. Application Expression
 
@@ -311,8 +289,6 @@ They must prioritize:
 
 Applications should feel operational first and branded second.
 
----
-
 ## 12. Component-Level Behavioral Guidance
 
 ### 12.1 Controls
@@ -333,8 +309,6 @@ Lists, tables, and workflow-heavy views should use hierarchy, spacing, and contr
 ### 12.6 Empty states and supporting graphics
 Use geometric, line-led, restrained visuals. Avoid mascots, organic shapes, or playful illustration styles.
 
----
-
 ## 13. Brand Graphics
 
 ### 13.1 Graphic tone
@@ -349,8 +323,6 @@ The gradient may play a stronger role in graphics than in UI chrome, but it must
 ### 13.4 Imagery
 When imagery is used, it should reinforce competence and product substance. Favor product, system, and concept visuals over lifestyle imagery.
 
----
-
 ## 14. Accessibility and Usability Expectations
 
 The dark theme must remain highly usable in extended sessions.
@@ -364,8 +336,6 @@ Ensure:
 
 The system must not sacrifice usability for atmosphere.
 
----
-
 ## 15. Non-Negotiable Rules
 
 - Do not use blob shapes.
@@ -377,9 +347,21 @@ The system must not sacrifice usability for atmosphere.
 - Do not allow marketing styling to leak into application core surfaces.
 - Do not make the dark theme harsh through excessive black-and-white severity.
 
----
+## 16. Standards & Protocols
 
-## 16. Summary Directive
+> **Rule of Truth**: This project follows the modular standards defined in the `.rules/` directory.
+- **Workflow**: Follow the plan-first workflow protocol in `.rules/00-global.md`.
+- **Linting/Formatting**: See `.rules/10-frontend.md` and `20-backend.md`.
+- **Quality**: See `.rules/30-testing.md`
+
+## 17. Development Phases
+
+Detailed roadmap execution lives in `.plans/`.
+- Use `.plans/*.md` for implementation-ready scope, sequencing, and acceptance criteria.
+  - `XX` plans are currently unscheduled/unprioritized.
+- Keep `SYSTEM_SPEC.md` focused on vision and architecture; avoid duplicating checklist-level execution detail here.
+
+## 18. Summary Directive
 
 Build a charcoal-based dark visual system that feels geometric, advanced, and premium through precision rather than spectacle. Use typography, spacing, tonal layering, and exact alignment as the primary tools of sophistication. Treat the brand gradient as a special signal, not a constant presence. Let the website carry slightly more atmosphere, while the applications remain calm, efficient, and operational.
 
