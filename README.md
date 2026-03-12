@@ -56,6 +56,10 @@ The system is based on the following high-level principles:
 
 For the full definition, refer to [SYSTEM_SPEC.md](SYSTEM_SPEC.md).
 
+## Consuming the Design System
+
+For integration instructions, see the [Consumption Guide](docs/consumption-guide.md).
+
 ## Development
 
 ### Prerequisites

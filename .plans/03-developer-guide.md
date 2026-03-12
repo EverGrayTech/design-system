@@ -22,7 +22,7 @@ Create a concise, implementation-oriented guide that explains how downstream web
 ## Implementation Checklist
 
 ### 1. Consumption Guide Document
-- [ ] Create `docs/consumption-guide.md` with the following sections:
+- [x] Create `docs/consumption-guide.md` with the following sections:
   - **What to import** — which files from `dist/` to reference (CSS variables, JSON tokens) and how
   - **What must come from the design system** — colors, typography, spacing, radii, motion, semantic states, accent usage
   - **What remains a local decision** — layout composition, component-internal dimensions, app-specific breakpoints, content-driven spacing adjustments
@@ -31,18 +31,18 @@ Create a concise, implementation-oriented guide that explains how downstream web
   - **Update flow** — how design system updates propagate to consuming repos (versioning, dependency update, rebuild)
 
 ### 2. Practical Examples
-- [ ] Include a CSS variables consumption example showing import and usage in a typical web app stylesheet
-- [ ] Include a JSON token consumption example showing import and usage in a JS/TS context (framework-neutral)
-- [ ] Include a Next.js-aware example (importing CSS variables in a global stylesheet or layout, using JSON tokens in a server component) — this acknowledges the primary consumer without prescribing Next.js as a requirement
-- [ ] Keep examples minimal and copy-pasteable
+- [x] Include a CSS variables consumption example showing import and usage in a typical web app stylesheet
+- [x] Include a JSON token consumption example showing import and usage in a JS/TS context (framework-neutral)
+- [x] Include a Next.js-aware example (importing CSS variables in a global stylesheet or layout, using JSON tokens in a server component) — this acknowledges the primary consumer without prescribing Next.js as a requirement
+- [x] Keep examples minimal and copy-pasteable
 
 ### 3. README Update
-- [ ] Add a section or link in the repository `README.md` pointing to `docs/consumption-guide.md`
-- [ ] Keep the pointer brief — one line with context, not a summary of the guide
+- [x] Add a section or link in the repository `README.md` pointing to `docs/consumption-guide.md`
+- [x] Keep the pointer brief — one line with context, not a summary of the guide
 
 ## Acceptance Criteria
-- [ ] `docs/consumption-guide.md` exists and covers all required topics (imports, governed values, local decisions, no-hardcode rules, exceptions, update flow)
-- [ ] At least one CSS and one JSON practical example are included
-- [ ] `README.md` links to the consumption guide
-- [ ] The guide does not prescribe a single frontend framework
-- [ ] The guide explicitly discourages copying token values into consuming repos
+- [x] `docs/consumption-guide.md` exists and covers all required topics (imports, governed values, local decisions, no-hardcode rules, exceptions, update flow)
+- [x] At least one CSS and one JSON practical example are included
+- [x] `README.md` links to the consumption guide
+- [x] The guide does not prescribe a single frontend framework
+- [x] The guide explicitly discourages copying token values into consuming repos
