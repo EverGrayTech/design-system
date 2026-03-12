@@ -1,0 +1,26 @@
+{
+  "color": {
+    "text": {
+      "primary": {
+        "value": "#e8e8ed",
+        "comment": "Default body and heading text"
+      },
+      "secondary": {
+        "value": "#a0a0a9",
+        "comment": "Supporting text, descriptions, metadata"
+      },
+      "tertiary": {
+        "value": "#6e6e78",
+        "comment": "Placeholder text, subtle labels"
+      },
+      "disabled": {
+        "value": "#4a4a53",
+        "comment": "Inactive or unavailable text"
+      },
+      "inverse": {
+        "value": "#121216",
+        "comment": "Text on light or accent backgrounds"
+      }
+    }
+  }
+}

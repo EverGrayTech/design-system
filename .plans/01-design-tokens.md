@@ -22,7 +22,7 @@ Define the foundational design token set for the EverGray Tech visual system —
 ## Implementation Checklist
 
 ### 1. Directory Structure
-- [ ] Create `tokens/` directory with the following file layout:
+- [x] Create `tokens/` directory with the following file layout:
   - `tokens/color/neutrals.json` — foundational charcoal-based neutral scale (canvas, chrome, surfaces, elevated, overlay)
   - `tokens/color/text.json` — text hierarchy (primary, secondary, tertiary, disabled, inverse)
   - `tokens/color/border.json` — borders, dividers, and subtle edge treatments
@@ -34,51 +34,51 @@ Define the foundational design token set for the EverGray Tech visual system —
   - `tokens/motion.json` — duration and easing tokens for feedback and transitions
 
 ### 2. Color: Neutrals
-- [ ] Define a layered neutral scale reflecting the spec's surface model: canvas → chrome → surface → elevated → overlay
-- [ ] Ensure tonal steps are subtle but legible, avoiding harsh separation or black-and-white severity
+- [x] Define a layered neutral scale reflecting the spec's surface model: canvas → chrome → surface → elevated → overlay
+- [x] Ensure tonal steps are subtle but legible, avoiding harsh separation or black-and-white severity
 
 ### 3. Color: Text Hierarchy
-- [ ] Define text colors for primary, secondary, tertiary, disabled, and inverse use
-- [ ] Ensure readable contrast at all levels against the neutral surface scale
+- [x] Define text colors for primary, secondary, tertiary, disabled, and inverse use
+- [x] Ensure readable contrast at all levels against the neutral surface scale
 
 ### 4. Color: Borders & Dividers
-- [ ] Define subtle, cool-neutral, low-contrast border tokens
-- [ ] Distinguish between surface edge (faint glint) and structural divider (slightly more deliberate)
+- [x] Define subtle, cool-neutral, low-contrast border tokens
+- [x] Distinguish between surface edge (faint glint) and structural divider (slightly more deliberate)
 
 ### 5. Color: Brand Accent
-- [ ] Define the red → dark blue → light blue gradient as named stops
-- [ ] Provide a solid accent fallback for contexts where gradients are impractical
-- [ ] Comment that accent is reserved for brand moments, CTAs, hero emphasis, and selected/focused states — not routine fills
+- [x] Define the red → dark blue → light blue gradient as named stops
+- [x] Provide a solid accent fallback for contexts where gradients are impractical
+- [x] Comment that accent is reserved for brand moments, CTAs, hero emphasis, and selected/focused states — not routine fills
 
 ### 6. Color: Semantic States
-- [ ] Define success, warning, error, and info colors with foreground and background variants
-- [ ] Ensure these are visually and structurally independent from the brand gradient
+- [x] Define success, warning, error, and info colors with foreground and background variants
+- [x] Ensure these are visually and structurally independent from the brand gradient
 
 ### 7. Typography
-- [ ] Define font family tokens (sans primary, monospace secondary)
-- [ ] Define a restrained size scale suitable for both website (larger moments) and application (compact efficiency)
-- [ ] Define weight, line-height, and letter-spacing scales
+- [x] Define font family tokens (sans primary, monospace secondary)
+- [x] Define a restrained size scale suitable for both website (larger moments) and application (compact efficiency)
+- [x] Define weight, line-height, and letter-spacing scales
 
 ### 8. Spacing
-- [ ] Define a mathematically ordered spacing scale (e.g., 4px-based progression)
-- [ ] Keep the scale compact — enough for calm readability and grouping, not exhaustive
+- [x] Define a mathematically ordered spacing scale (e.g., 4px-based progression)
+- [x] Keep the scale compact — enough for calm readability and grouping, not exhaustive
 
 ### 9. Radii
-- [ ] Define a minimal radius scale reflecting precision-machined, restrained rounding
-- [ ] Avoid over-rounded consumer softness
+- [x] Define a minimal radius scale reflecting precision-machined, restrained rounding
+- [x] Avoid over-rounded consumer softness
 
 ### 10. Motion
-- [ ] Define duration tokens for fast feedback, standard transitions, and deliberate entrances
-- [ ] Define easing tokens favoring subtle, physically plausible curves
+- [x] Define duration tokens for fast feedback, standard transitions, and deliberate entrances
+- [x] Define easing tokens favoring subtle, physically plausible curves
 
 ### 11. Summary & Tradeoffs
-- [ ] Add a brief `tokens/README.md` documenting the structure, the reasoning behind file splits, and any deliberate tradeoffs (e.g., no expression-specific overrides yet, gradient as special accent only)
+- [x] Add a brief `tokens/README.md` documenting the structure, the reasoning behind file splits, and any deliberate tradeoffs (e.g., no expression-specific overrides yet, gradient as special accent only)
 
 ## Acceptance Criteria
-- [ ] All token files exist under `tokens/` with values directly traceable to `SYSTEM_SPEC.md`
-- [ ] Neutral surface scale supports at least five distinct layers
-- [ ] Brand gradient is represented as a special accent, not a default fill
-- [ ] Semantic states are fully independent from brand accent
-- [ ] Token granularity is minimal and deliberate — no unused or speculative values
-- [ ] Brief clarifying comments exist only where intent would otherwise be ambiguous
-- [ ] `tokens/README.md` explains the structure and key tradeoffs
+- [x] All token files exist under `tokens/` with values directly traceable to `SYSTEM_SPEC.md`
+- [x] Neutral surface scale supports at least five distinct layers
+- [x] Brand gradient is represented as a special accent, not a default fill
+- [x] Semantic states are fully independent from brand accent
+- [x] Token granularity is minimal and deliberate — no unused or speculative values
+- [x] Brief clarifying comments exist only where intent would otherwise be ambiguous
+- [x] `tokens/README.md` explains the structure and key tradeoffs
