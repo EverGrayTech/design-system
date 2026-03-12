@@ -55,3 +55,37 @@ The system is based on the following high-level principles:
 - layering should feel machined, not outlined
 
 For the full definition, refer to [SYSTEM_SPEC.md](SYSTEM_SPEC.md).
+
+## Development
+
+### Prerequisites
+
+- Node.js (LTS recommended)
+- npm
+
+### Install dependencies
+
+```sh
+npm install
+```
+
+### Build generated outputs
+
+```sh
+npm run build
+```
+
+This generates consumable token outputs under `dist/`:
+
+| Output | Path | Format |
+|---|---|---|
+| CSS custom properties | `dist/css/variables.css` | `:root` block with `--`-prefixed variables |
+| JSON flat export | `dist/json/tokens.json` | PascalCase key → value pairs |
+
+Source tokens live in `tokens/` — see [tokens/README.md](tokens/README.md) for the structure and design rationale.
+
+### Clean
+
+```sh
+npm run clean
+```
