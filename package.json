@@ -1,0 +1,14 @@
+{
+  "name": "@evergray/design-tokens",
+  "version": "0.1.0",
+  "description": "Design tokens for the EverGray Tech visual system",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "style-dictionary build --config style-dictionary.config.js",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4"
+  }
+}
