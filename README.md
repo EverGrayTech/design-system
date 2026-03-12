@@ -18,7 +18,7 @@ This repository exists to:
 
 The authoritative written specification is:
 
-- [SYSTEM_SPEC.md](SYSTEM_SPEC.md)
+- [System Spec](docs/system-spec.md)
 
 That document defines the visual intent, principles, and behavioral rules for the system. If implementation details appear to conflict with the spec, the spec wins unless it is intentionally revised.
 
@@ -54,7 +54,7 @@ The system is based on the following high-level principles:
 - motion is feedback, not spectacle
 - layering should feel machined, not outlined
 
-For the full definition, refer to [SYSTEM_SPEC.md](SYSTEM_SPEC.md).
+For the full definition, refer to [System Spec](docs/system-spec.md).
 
 ## Consuming the Design System
 

@@ -1,7 +1,7 @@
 # Plan: Initial Design Token System
 
 ## Objective
-Define the foundational design token set for the EverGray Tech visual system — a deliberate, minimal, production-appropriate collection of source tokens derived directly from `SYSTEM_SPEC.md`.
+Define the foundational design token set for the EverGray Tech visual system — a deliberate, minimal, production-appropriate collection of source tokens derived directly from `docs/system-spec.md`.
 
 ## Customer Value
 - Establishes the single source of truth for all visual values across website and application expressions
@@ -17,7 +17,7 @@ Define the foundational design token set for the EverGray Tech visual system —
 - Token granularity is intentionally restrained — prefer fewer well-chosen values over exhaustive scales
 
 ## Prerequisites
-- `SYSTEM_SPEC.md` (exists, serves as authoritative source)
+- `docs/system-spec.md` (exists, serves as authoritative source)
 
 ## Implementation Checklist
 
@@ -75,7 +75,7 @@ Define the foundational design token set for the EverGray Tech visual system —
 - [x] Add a brief `tokens/README.md` documenting the structure, the reasoning behind file splits, and any deliberate tradeoffs (e.g., no expression-specific overrides yet, gradient as special accent only)
 
 ## Acceptance Criteria
-- [x] All token files exist under `tokens/` with values directly traceable to `SYSTEM_SPEC.md`
+- [x] All token files exist under `tokens/` with values directly traceable to `docs/system-spec.md`
 - [x] Neutral surface scale supports at least five distinct layers
 - [x] Brand gradient is represented as a special accent, not a default fill
 - [x] Semantic states are fully independent from brand accent

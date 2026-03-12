@@ -359,7 +359,7 @@ The system must not sacrifice usability for atmosphere.
 Detailed roadmap execution lives in `.plans/`.
 - Use `.plans/*.md` for implementation-ready scope, sequencing, and acceptance criteria.
   - `XX` plans are currently unscheduled/unprioritized.
-- Keep `SYSTEM_SPEC.md` focused on vision and architecture; avoid duplicating checklist-level execution detail here.
+- Keep `docs/system-spec.md` focused on vision and architecture; avoid duplicating checklist-level execution detail here.
 
 ## 18. Summary Directive
 
