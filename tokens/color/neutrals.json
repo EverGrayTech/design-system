@@ -1,0 +1,26 @@
+{
+  "color": {
+    "neutral": {
+      "canvas": {
+        "value": "#121216",
+        "comment": "Deepest background — page-level canvas"
+      },
+      "chrome": {
+        "value": "#1a1a1f",
+        "comment": "Application frame, navigation, sidebars"
+      },
+      "surface": {
+        "value": "#222228",
+        "comment": "Standard panels and content areas"
+      },
+      "elevated": {
+        "value": "#2a2a31",
+        "comment": "Raised elements — popovers, dropdowns, tooltips"
+      },
+      "overlay": {
+        "value": "#32323a",
+        "comment": "Modal backdrops and highest-layer surfaces"
+      }
+    }
+  }
+}

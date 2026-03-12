@@ -1,0 +1,18 @@
+{
+  "color": {
+    "border": {
+      "edge": {
+        "value": "rgba(255, 255, 255, 0.06)",
+        "comment": "Faint surface-edge glint — restrained, not an explicit outline"
+      },
+      "divider": {
+        "value": "rgba(255, 255, 255, 0.10)",
+        "comment": "Structural separator — slightly more deliberate than edge"
+      },
+      "focus": {
+        "value": "rgba(255, 255, 255, 0.25)",
+        "comment": "Keyboard-focus ring — must remain obvious for accessibility"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "radii": {
+    "_comment": "Restrained rounding — precision-machined, not soft or toy-like.",
+    "none": { "value": "0px" },
+    "sm": { "value": "2px" },
+    "md": { "value": "4px" },
+    "lg": { "value": "6px" },
+    "xl": { "value": "8px" },
+    "full": {
+      "value": "9999px",
+      "comment": "Pill shapes and circular elements only"
+    }
+  }
+}

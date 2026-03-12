@@ -1,0 +1,15 @@
+{
+  "spacing": {
+    "_comment": "4px-based progression. Compact enough for dense application UI, generous enough for website composition.",
+    "2xs": { "value": "2px" },
+    "xs": { "value": "4px" },
+    "sm": { "value": "8px" },
+    "md": { "value": "12px" },
+    "lg": { "value": "16px" },
+    "xl": { "value": "24px" },
+    "2xl": { "value": "32px" },
+    "3xl": { "value": "48px" },
+    "4xl": { "value": "64px" },
+    "5xl": { "value": "96px" }
+  }
+}

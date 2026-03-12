@@ -1,0 +1,33 @@
+{
+  "color": {
+    "accent": {
+      "_comment": "The brand gradient is a special accent signal — reserved for brand moments, primary CTAs, hero emphasis, selected/focused states, and progress indicators. It must not be used as a default fill language.",
+      "gradient": {
+        "stop1": {
+          "value": "#A21534",
+          "comment": "Burgundy — gradient start (from logo)"
+        },
+        "stop2": {
+          "value": "#0F263D",
+          "comment": "Dark navy — gradient midpoint (from logo)"
+        },
+        "stop3": {
+          "value": "#3A7ABB",
+          "comment": "Blue — gradient end (from logo)"
+        }
+      },
+      "solid": {
+        "value": "#3A7ABB",
+        "comment": "Fallback for contexts where gradients are impractical"
+      },
+      "solid-hover": {
+        "value": "#4A8BCC",
+        "comment": "Hover state for solid accent"
+      },
+      "solid-muted": {
+        "value": "#2A5A8A",
+        "comment": "Subdued accent for less prominent interactive elements"
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "typography": {
+    "family": {
+      "sans": {
+        "value": "'Inter', system-ui, -apple-system, sans-serif",
+        "comment": "Primary typeface — contemporary technical sans with strong screen readability"
+      },
+      "mono": {
+        "value": "'JetBrains Mono', 'Fira Code', ui-monospace, monospace",
+        "comment": "Secondary — selective use for technical affordances and data elements"
+      }
+    },
+    "size": {
+      "xs": { "value": "0.75rem" },
+      "sm": { "value": "0.875rem" },
+      "base": { "value": "1rem" },
+      "md": { "value": "1.125rem" },
+      "lg": { "value": "1.25rem" },
+      "xl": { "value": "1.5rem" },
+      "2xl": { "value": "2rem" },
+      "3xl": { "value": "2.5rem" },
+      "4xl": {
+        "value": "3.5rem",
+        "comment": "Website hero headlines — not typical in application UI"
+      }
+    },
+    "weight": {
+      "regular": { "value": "400" },
+      "medium": { "value": "500" },
+      "semibold": { "value": "600" },
+      "bold": { "value": "700" }
+    },
+    "lineHeight": {
+      "tight": { "value": "1.2" },
+      "normal": { "value": "1.5" },
+      "relaxed": { "value": "1.65" }
+    },
+    "letterSpacing": {
+      "tight": { "value": "-0.01em" },
+      "normal": { "value": "0em" },
+      "wide": {
+        "value": "0.04em",
+        "comment": "All-caps labels, overlines"
+      }
+    }
+  }
+}

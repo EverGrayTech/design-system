@@ -1,0 +1,40 @@
+{
+  "motion": {
+    "duration": {
+      "instant": {
+        "value": "75ms",
+        "comment": "Micro-feedback — toggles, checkboxes, pressed states"
+      },
+      "fast": {
+        "value": "150ms",
+        "comment": "Standard interaction feedback — hover, focus, small state changes"
+      },
+      "normal": {
+        "value": "250ms",
+        "comment": "Transitions — panels, reveals, selection changes"
+      },
+      "slow": {
+        "value": "400ms",
+        "comment": "Deliberate entrances — modals, page-level transitions"
+      }
+    },
+    "easing": {
+      "default": {
+        "value": "cubic-bezier(0.25, 0.1, 0.25, 1.0)",
+        "comment": "Subtle, physically plausible — standard for most transitions"
+      },
+      "in": {
+        "value": "cubic-bezier(0.4, 0.0, 1.0, 1.0)",
+        "comment": "Accelerating exit"
+      },
+      "out": {
+        "value": "cubic-bezier(0.0, 0.0, 0.2, 1.0)",
+        "comment": "Decelerating entrance"
+      },
+      "in-out": {
+        "value": "cubic-bezier(0.4, 0.0, 0.2, 1.0)",
+        "comment": "Symmetric — position shifts, layout reflows"
+      }
+    }
+  }
+}

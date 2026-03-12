@@ -1,0 +1,23 @@
+{
+  "color": {
+    "semantic": {
+      "_comment": "Semantic states are independent from the brand gradient. They must remain clear and functional on their own.",
+      "success": {
+        "foreground": { "value": "#34C775" },
+        "background": { "value": "#162E1F" }
+      },
+      "warning": {
+        "foreground": { "value": "#D4952A" },
+        "background": { "value": "#2A2214" }
+      },
+      "error": {
+        "foreground": { "value": "#D64545" },
+        "background": { "value": "#2E1616" }
+      },
+      "info": {
+        "foreground": { "value": "#5B9FD6" },
+        "background": { "value": "#162230" }
+      }
+    }
+  }
+}
