@@ -33,6 +33,7 @@ Create a concise, implementation-oriented guide that explains how downstream web
 ### 2. Practical Examples
 - [ ] Include a CSS variables consumption example showing import and usage in a typical web app stylesheet
 - [ ] Include a JSON token consumption example showing import and usage in a JS/TS context (framework-neutral)
+- [ ] Include a Next.js-aware example (importing CSS variables in a global stylesheet or layout, using JSON tokens in a server component) — this acknowledges the primary consumer without prescribing Next.js as a requirement
 - [ ] Keep examples minimal and copy-pasteable
 
 ### 3. README Update

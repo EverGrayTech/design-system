@@ -1,0 +1,3 @@
+onlyBuiltDependencies:
+  - '@bundled-es-modules/glob'
+  - style-dictionary

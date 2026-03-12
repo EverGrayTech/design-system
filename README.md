@@ -61,18 +61,18 @@ For the full definition, refer to [SYSTEM_SPEC.md](SYSTEM_SPEC.md).
 ### Prerequisites
 
 - Node.js (LTS recommended)
-- npm
+- pnpm
 
 ### Install dependencies
 
 ```sh
-npm install
+pnpm install
 ```
 
 ### Build generated outputs
 
 ```sh
-npm run build
+pnpm build
 ```
 
 This generates consumable token outputs under `dist/`:
@@ -87,5 +87,5 @@ Source tokens live in `tokens/` — see [tokens/README.md](tokens/README.md) for
 ### Clean
 
 ```sh
-npm run clean
+pnpm clean
 ```
