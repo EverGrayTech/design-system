@@ -27,9 +27,9 @@ Define shared design-system guidance for lists, table-like layouts, row summarie
 - [x] Clarify when table patterns are appropriate versus when stacked row summaries are preferred
 
 ### 2. Scan Hierarchy Rules
-- [ ] Document how to prioritize primary record identity, supporting metadata, state information, next-action cues, and secondary analytics
-- [ ] Define expectations for typographic hierarchy and metadata de-emphasis within dense rows and grouped panels
-- [ ] Clarify how comparison-friendly layouts should preserve fast scanning in dark-theme contexts
+- [x] Document how to prioritize primary record identity, supporting metadata, state information, next-action cues, and secondary analytics
+- [x] Define expectations for typographic hierarchy and metadata de-emphasis within dense rows and grouped panels
+- [x] Clarify how comparison-friendly layouts should preserve fast scanning in dark-theme contexts
 
 ### 3. Density Posture
 - [ ] Define the acceptable compactness range for operational applications so dense views feel efficient but not cramped

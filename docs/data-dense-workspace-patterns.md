@@ -108,3 +108,85 @@ Dense surfaces exist within the workspace. Their containment should feel integra
 - Do not apply `--color-neutral-elevated` to table or list backgrounds. The elevated surface level is reserved for overlays, popovers, and tooltips — not for workspace content.
 
 ---
+
+## 2. Scan Hierarchy
+
+Dense surfaces succeed or fail based on how quickly a user can locate the information they need. Scan hierarchy defines the visual weight assigned to each category of content within a row or metadata block so users can orient instantly.
+
+### 2.1 Content Priority Tiers
+
+Within any dense row — whether a table row, stacked summary, or metadata block — content falls into a priority hierarchy. Higher-priority elements receive more visual weight; lower-priority elements recede.
+
+| Priority | Content Type | Examples | Visual Weight |
+|---|---|---|---|
+| **1 — Primary identity** | The entity name, title, or key identifier | Project name, user name, task title, file name | `--color-text-primary`, `--typography-weight-medium`, `--typography-size-sm` or `--typography-size-base` |
+| **2 — State / status** | Current condition of the record | Status badge, priority indicator, active/archived flag | Compact indicator using semantic or neutral colors. See Section 2.3. |
+| **3 — Key metadata** | The most decision-relevant supporting attributes | Due date, assignee, category, last modified | `--color-text-secondary`, `--typography-weight-regular`, `--typography-size-sm` |
+| **4 — Action cues** | Affordances for the next step | Edit, delete, open, quick actions | Icon-only buttons in `--color-text-secondary` (see [Forms and Action Controls](forms-and-action-controls.md), Section 1.8). Visible on hover or always visible depending on surface density. |
+| **5 — Secondary analytics** | Supplementary counts, scores, or derived values | View count, completion percentage, word count | `--color-text-tertiary`, `--typography-size-xs`. These should never compete with primary identity or key metadata. |
+
+### 2.2 Typographic Hierarchy in Dense Rows
+
+Typography is the primary tool for establishing scan hierarchy in dense surfaces. Color and weight do the work — do not rely on decorative treatments, icons, or emphasis backgrounds.
+
+**Table rows:**
+- Primary identity column: `--color-text-primary`, `--typography-weight-medium`.
+- All other columns: `--color-text-secondary`, `--typography-weight-regular`.
+- Timestamp or date columns may use `--color-text-tertiary` if they are supporting information, not the primary sort dimension.
+- Monospaced type (`--typography-family-mono`) may be used for IDs, codes, hashes, or technical identifiers. Keep it at `--typography-size-xs` or `--typography-size-sm` so it does not visually dominate.
+
+**Stacked row summaries:**
+- Title line: `--color-text-primary`, `--typography-weight-medium`, `--typography-size-sm` or `--typography-size-base`.
+- Metadata line: `--color-text-secondary`, `--typography-weight-regular`, `--typography-size-xs` or `--typography-size-sm`.
+- If a row has two metadata lines, the second should use `--color-text-tertiary` to create a clear fade in importance.
+
+**Grouped metadata blocks:**
+- Key labels: `--color-text-secondary`, `--typography-size-xs` or `--typography-size-sm`.
+- Values: `--color-text-primary`, `--typography-size-sm` or `--typography-size-base`.
+- The key-to-value contrast creates the scan pattern. Keys orient; values answer.
+
+### 2.3 Inline State Indicators
+
+State and status information often appears within dense rows as compact visual cues. These indicators must be immediately legible without dominating the row.
+
+**Indicator types:**
+
+| Type | Structure | Use When |
+|---|---|---|
+| **Text badge** | Short label (`2–3 words max`) with a subtle background | Showing named states: "Active", "Draft", "Overdue", "Complete" |
+| **Dot indicator** | Small colored circle (`6px`–`8px`) beside text | Showing binary or simple state alongside other content |
+| **Icon indicator** | Small semantic icon (`14px`–`16px`) | Showing type, category, or a state that benefits from a recognizable symbol |
+
+**Badge styling:**
+- Background: Muted semantic color — `--color-semantic-success-background`, `--color-semantic-warning-background`, `--color-semantic-error-background`, or `--color-neutral-surface` for neutral states.
+- Text: Corresponding semantic foreground — `--color-semantic-success-foreground`, etc. Neutral state text uses `--color-text-secondary`.
+- Typography: `--typography-size-xs`, `--typography-weight-medium`.
+- Radius: `--radii-sm`.
+- Padding: `--spacing-xs` vertical, `--spacing-sm` horizontal.
+
+**Dot styling:**
+- Size: `6px`–`8px` circle.
+- Color: Semantic foreground token matching the state. Neutral dots use `--color-text-tertiary`.
+- Placement: Inline to the left of the associated text, with `--spacing-xs` gap.
+
+**Rules:**
+- Indicators should never be the largest or most colorful element in a row. State is Tier 2 — it supports the primary identity, not replaces it.
+- Limit color usage to semantically meaningful states. Do not assign arbitrary colors to non-semantic categories (e.g., do not use red for a project type that is not an error or danger state).
+- When a row has no active state to display, the indicator position should be empty or hold a neutral default — not a grey badge that adds visual noise.
+
+### 2.4 Comparison-Friendly Scanning
+
+When users scan a column of similar values (dates, statuses, numbers), alignment and consistency are critical.
+
+**Column alignment rules:**
+- Text columns: Left-aligned. Consistent starting position for the eye.
+- Number columns: Right-aligned. Decimal points and digit counts should line up.
+- Date/time columns: Left-aligned with consistent formatting. Use a fixed-width format (e.g., "Mar 12, 2026") rather than relative time ("3 days ago") in table columns. Relative time may be used in stacked-row metadata.
+- Status columns: Left-aligned. Badge or indicator should always occupy the same horizontal band.
+
+**Dark-theme considerations:**
+- In dark themes, subtle tonal differences carry more weight than in light themes. Avoid using too many text color levels within a single row — three levels (`--color-text-primary`, `--color-text-secondary`, `--color-text-tertiary`) are sufficient for hierarchy.
+- Do not use dim text (`--color-text-disabled`) for visible data. Disabled text is reserved for non-interactive or unavailable elements. Even low-priority metadata should use `--color-text-tertiary` at minimum.
+- Table header text in `--color-text-secondary` naturally recedes against `--color-text-primary` body text, creating an automatic scanning rhythm.
+
+---
