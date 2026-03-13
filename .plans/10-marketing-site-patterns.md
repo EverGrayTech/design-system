@@ -22,38 +22,38 @@ Define shared design-system guidance for marketing-site composition, section str
 ## Implementation Checklist
 
 ### 1. Marketing Composition Guidance
-- [ ] Create a dedicated guidance doc for recurring marketing-site structures including hero sections, intro/value sections, credibility or leadership proof blocks, grouped service/capability lists, CTA sections, and footer structure
-- [ ] Define the intended posture of each section type without prescribing one exact page composition
-- [ ] Clarify how section framing, spacing, and containment should support a premium technical brand expression
+- [x] Create a dedicated guidance doc for recurring marketing-site structures including hero sections, intro/value sections, credibility or leadership proof blocks, grouped service/capability lists, CTA sections, and footer structure
+- [x] Define the intended posture of each section type without prescribing one exact page composition
+- [x] Clarify how section framing, spacing, and containment should support a premium technical brand expression
 
 ### 2. Section Hierarchy and Content Framing
-- [ ] Document hierarchy rules for eyebrow/kicker text, primary headlines, supporting lead paragraphs, body copy, grouped lists, supporting metadata, and section transitions
-- [ ] Clarify how marketing surfaces should create emphasis through typography, spacing, layout, and restraint rather than decorative styling
-- [ ] Define when separators, borders, or spacing alone should carry section boundaries
+- [x] Document hierarchy rules for eyebrow/kicker text, primary headlines, supporting lead paragraphs, body copy, grouped lists, supporting metadata, and section transitions
+- [x] Clarify how marketing surfaces should create emphasis through typography, spacing, layout, and restraint rather than decorative styling
+- [x] Define when separators, borders, or spacing alone should carry section boundaries
 
 ### 3. CTA and Link-Emphasis Hierarchy
-- [ ] Define the recommended hierarchy for primary CTAs, secondary CTAs, quiet/tertiary links, inline text links, and contact-oriented actions
-- [ ] Clarify when brand accent is appropriate versus when neutral treatment should lead
-- [ ] Document hover, focus, and active-state expectations in a marketing context
+- [x] Define the recommended hierarchy for primary CTAs, secondary CTAs, quiet/tertiary links, inline text links, and contact-oriented actions
+- [x] Clarify when brand accent is appropriate versus when neutral treatment should lead
+- [x] Document hover, focus, and active-state expectations in a marketing context
 
 ### 4. Responsive Posture
-- [ ] Provide guidance for headline wrapping, width constraints, section spacing changes, stacked versus multi-column content blocks, CTA regrouping, and contact/info card behavior on smaller screens
-- [ ] Ensure mobile adaptations preserve clarity, hierarchy, and composure rather than simply shrinking desktop patterns
-- [ ] Clarify which marketing structures may simplify or collapse on narrow viewports
+- [x] Provide guidance for headline wrapping, width constraints, section spacing changes, stacked versus multi-column content blocks, CTA regrouping, and contact/info card behavior on smaller screens
+- [x] Ensure mobile adaptations preserve clarity, hierarchy, and composure rather than simply shrinking desktop patterns
+- [x] Clarify which marketing structures may simplify or collapse on narrow viewports
 
 ### 5. Website-Specific Dos and Don'ts
-- [ ] Document practical boundaries for atmosphere, card treatment, border/divider use, and section emphasis so marketing pages remain premium and composed
-- [ ] Capture the limits that prevent drift into generic SaaS styling, glass-heavy presentation, or overbuilt marketing chrome
-- [ ] Cross-reference website atmosphere guidance where section composition and background treatment overlap
+- [x] Document practical boundaries for atmosphere, card treatment, border/divider use, and section emphasis so marketing pages remain premium and composed
+- [x] Capture the limits that prevent drift into generic SaaS styling, glass-heavy presentation, or overbuilt marketing chrome
+- [x] Cross-reference website atmosphere guidance where section composition and background treatment overlap
 
 ### 6. Examples and Reference Structures
-- [ ] Add representative examples of hero, section, proof, and CTA structures
-- [ ] Include annotated responsive examples or equivalent rules for mobile adaptation
-- [ ] Optionally define recommended marketing-pattern naming if it improves downstream reuse without overformalizing implementation
+- [x] Add representative examples of hero, section, proof, and CTA structures
+- [x] Include annotated responsive examples or equivalent rules for mobile adaptation
+- [x] Optionally define recommended marketing-pattern naming if it improves downstream reuse without overformalizing implementation
 
 ## Acceptance Criteria
-- [ ] Downstream marketing sites can compose key sections without inventing a parallel local visual grammar
-- [ ] CTA hierarchy is clearer and more reusable across marketing surfaces
-- [ ] The website's “slightly more cinematic” expression becomes concrete enough to implement consistently
-- [ ] Marketing layouts remain recognizably part of the same system as EverGray applications
-- [ ] The guidance clearly supports `evergraytech.com` adoption work and future EverGray marketing pages
+- [x] Downstream marketing sites can compose key sections without inventing a parallel local visual grammar
+- [x] CTA hierarchy is clearer and more reusable across marketing surfaces
+- [x] The website's “slightly more cinematic” expression becomes concrete enough to implement consistently
+- [x] Marketing layouts remain recognizably part of the same system as EverGray applications
+- [x] The guidance clearly supports `evergraytech.com` adoption work and future EverGray marketing pages
