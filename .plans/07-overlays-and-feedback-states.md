@@ -27,9 +27,9 @@ Define shared design-system guidance for overlays, modal workflows, and common f
 - [x] Clarify the difference between modal interruption, lightweight overlay support, and inline alternatives where relevant
 
 ### 2. Feedback-State Patterns
-- [ ] Document consistent guidance for empty, loading, progress, success, warning, and error states
-- [ ] Define how each state should communicate meaning while remaining restrained and low-overhead
-- [ ] Clarify where semantic color should lead and where typography, spacing, or structure should do more of the work
+- [x] Document consistent guidance for empty, loading, progress, success, warning, and error states
+- [x] Define how each state should communicate meaning while remaining restrained and low-overhead
+- [x] Clarify where semantic color should lead and where typography, spacing, or structure should do more of the work
 
 ### 3. Tone and Prominence Rules
 - [ ] Define how visibility, semantic clarity, and restrained visual language should balance across different feedback intensities

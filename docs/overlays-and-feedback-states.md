@@ -181,3 +181,127 @@ Not every interruption requires a modal. The design system recommends inline pat
 Products make the final decision, but the design system encourages inline-first for routine interactions and modal-only for genuine interruptions.
 
 ---
+
+## 2. Feedback State Patterns
+
+Applications must communicate status clearly — empty data, loading operations, completed actions, warnings, and errors. Each feedback state has a defined visual treatment that stays calm, legible, and semantically unambiguous in the dark-theme environment.
+
+### 2.1 Empty State
+
+An empty state appears when a surface has no data to display — a new account, an empty search result, a cleared filter.
+
+**Visual treatment:**
+- Centered within the containing surface.
+- Icon (optional): `32px`–`48px`, `--color-text-tertiary`. Geometric and restrained — no mascots, playful illustrations, or organic shapes.
+- Primary message: `--typography-size-base`, `--typography-weight-medium`, `--color-text-primary`. Factual and brief: "No projects yet", "No results found".
+- Supporting message (optional): `--typography-size-sm`, `--color-text-secondary`. Suggests a path forward: "Create your first project to get started".
+- Action (optional): A primary or tertiary button below the message: "Create Project", "Clear Filters".
+
+**Spacing:**
+- `--spacing-xl` between icon and primary message.
+- `--spacing-sm` between primary and supporting messages.
+- `--spacing-lg` between supporting message and action button.
+
+**Where semantic color leads:** Nowhere — empty states are neutral. They use only text hierarchy and optional geometric icons. No semantic color, no accent.
+
+### 2.2 Loading State
+
+Loading states communicate that the system is working. They must inspire confidence without demanding attention.
+
+**Spinner:**
+- Use a simple circular spinner, `20px`–`24px` diameter, `2px` stroke.
+- Color: `--color-text-tertiary` for the track, `--color-text-secondary` for the active arc.
+- Animation: Continuous rotation, smooth and constant. Use CSS `animation` with `linear` timing — not the system easing tokens. Loading animation is a special case where linear rotation is appropriate.
+- Placement: Centered in the surface being loaded when the entire surface is empty. Inline next to a trigger (button, control) when a specific action is loading.
+
+**Skeleton loading:**
+- For surfaces where the layout is known in advance (tables, card grids, metadata blocks), use skeleton placeholders that reflect the expected content shape.
+- Skeleton elements: Rounded rectangles matching the approximate dimensions of text lines and content blocks. Background: `--color-neutral-surface` with a subtle pulse animation (opacity oscillation between `0.4` and `1.0`, `--motion-duration-slow`, `--motion-easing-in-out`).
+- Do not use skeleton loading for every context. It is most valuable for content-heavy surfaces where a blank area would feel broken.
+
+**Loading overlay:**
+- When an action is in progress but the surface remains visible (e.g., saving a form while the form is still displayed), apply a semi-transparent overlay: `rgba(18, 18, 22, 0.6)` over the affected area with a centered spinner.
+- Do not dim the entire page for a local operation. Scope the overlay to the surface being updated.
+
+**Button loading:** See [Forms and Action Controls](forms-and-action-controls.md), Section 2.1 — primary and secondary button loading states.
+
+**Where semantic color leads:** Nowhere — loading is neutral. No accent, no semantic colors. The spinner and skeleton use neutral gray tones only.
+
+### 2.3 Progress State
+
+Progress states communicate how far along an operation is. They are appropriate for operations with a known duration or completion percentage.
+
+**Progress bar:**
+- Track: `--color-neutral-surface`, `4px` height, `--radii-full` radius.
+- Fill: `--color-accent-solid-muted` for standard progress. `--color-semantic-success-foreground` when complete.
+- Width: Matches the container width or a defined max-width.
+- Animation: The fill advances smoothly using `--motion-easing-default`. Do not snap between values.
+
+**Progress text:**
+- Percentage or step indicator: `--typography-size-xs`, `--color-text-secondary`. Placed above or to the right of the bar.
+- Do not display "100%" as a persistent state — transition to a success message or remove the progress indicator.
+
+**When to use progress vs. spinner:**
+- Use a progress bar when the operation has a measurable completion state (upload, multi-step process, import).
+- Use a spinner when the duration is unknown.
+
+**Where semantic color leads:** Only at completion (`--color-semantic-success-foreground`). During progress, accent-muted provides a quiet, forward-moving signal. Do not use the brand gradient for progress fills.
+
+### 2.4 Success State
+
+Success communicates that an action completed as expected. It should feel confident and brief — the system confirms and moves on.
+
+**Inline success:**
+- Text: `--typography-size-xs` or `--typography-size-sm`, `--color-semantic-success-foreground`. Placed near the trigger action or in the support-text position below a field.
+- Transient: Fades back to rest after `2–3 seconds` using `--motion-duration-normal` / `--motion-easing-default`.
+- No icon is required for inline success. The green text alone is sufficient signal.
+
+**Toast success:**
+- Uses the toast pattern (Section 1.1) with optional `--color-semantic-success-foreground` left border accent.
+- Auto-dismisses after `4–5 seconds`.
+
+**Panel success:**
+- For prominent confirmations (e.g., completing a multi-step workflow), a `--color-semantic-success-background` panel with `--color-semantic-success-foreground` text may be used within the workspace.
+- Keep it compact — no more than 2–3 lines. Include a dismiss affordance or auto-dismiss.
+
+**Where semantic color leads:** Success-foreground for text and accents. Success-background for panel fills. Typography and brevity do most of the communication work.
+
+### 2.5 Warning State
+
+Warnings indicate potential issues that do not block the user but merit attention.
+
+**Inline warning:** Same placement and sizing as inline success, using `--color-semantic-warning-foreground`. See [Forms and Action Controls](forms-and-action-controls.md), Section 3.4.
+
+**Warning banner:**
+- A horizontal bar at the top of a workspace section or page.
+- Background: `--color-semantic-warning-background`.
+- Text: `--color-semantic-warning-foreground`, `--typography-size-sm`.
+- Leading icon (optional): A warning triangle, `16px`, `--color-semantic-warning-foreground`.
+- Dismiss affordance: Icon-only close button on the right.
+- Padding: `--spacing-md` vertical, `--spacing-lg` horizontal.
+
+**Where semantic color leads:** Warning-foreground for text and icon. Warning-background for banner fills. The warm tone draws attention without alarm.
+
+### 2.6 Error State
+
+Errors communicate that something went wrong and typically require user action to resolve.
+
+**Inline error:** See [Forms and Action Controls](forms-and-action-controls.md), Section 3.3 for field-level error messages.
+
+**Error banner:**
+- Same structure as warning banner but using `--color-semantic-error-background` and `--color-semantic-error-foreground`.
+- Persistent — does not auto-dismiss. The user must resolve the issue or manually dismiss.
+- May include a recovery action as a text link or tertiary button within the banner.
+
+**Error page / full-surface error:**
+- For catastrophic failures (page load failure, authentication error, server unavailable).
+- Centered in the workspace.
+- Icon (optional): `32px`–`48px`, `--color-semantic-error-foreground`. Geometric — not a cartoon or dramatic illustration.
+- Title: `--typography-size-lg`, `--typography-weight-semibold`, `--color-text-primary`.
+- Description: `--typography-size-sm`, `--color-text-secondary`. Explains what happened in plain language.
+- Recovery action: A primary or secondary button below the description: "Try Again", "Go Back", "Contact Support".
+- Follow the same spacing rhythm as empty states.
+
+**Where semantic color leads:** Error-foreground for text, icons, and border accents. Error-background for banner and panel fills. Never use error colors for non-error states.
+
+---
