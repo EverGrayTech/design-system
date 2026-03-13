@@ -22,9 +22,9 @@ Define shared design-system guidance for lists, table-like layouts, row summarie
 ## Implementation Checklist
 
 ### 1. Dense-Surface Structure Guidance
-- [ ] Create a dedicated guidance doc for lists, table-like layouts, stacked metadata blocks, panel internals, and grouping/separation patterns
-- [ ] Define how dense surfaces should use spacing, dividers, and containment to stay legible without feeling striped or ornamental
-- [ ] Clarify when table patterns are appropriate versus when stacked row summaries are preferred
+- [x] Create a dedicated guidance doc for lists, table-like layouts, stacked metadata blocks, panel internals, and grouping/separation patterns
+- [x] Define how dense surfaces should use spacing, dividers, and containment to stay legible without feeling striped or ornamental
+- [x] Clarify when table patterns are appropriate versus when stacked row summaries are preferred
 
 ### 2. Scan Hierarchy Rules
 - [ ] Document how to prioritize primary record identity, supporting metadata, state information, next-action cues, and secondary analytics
