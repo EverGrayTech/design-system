@@ -22,9 +22,9 @@ Define shared design-system guidance for core form controls, action variants, an
 ## Implementation Checklist
 
 ### 1. Control Pattern Guidance
-- [ ] Create a dedicated guidance doc for core controls including text inputs, textareas, select/dropdown triggers, button variants, and any approved checkbox/radio or icon-only action posture
-- [ ] Define baseline structural expectations for each supported control type, including containment, edge treatment, and emphasis posture
-- [ ] Clarify which controls are considered foundational versus optional in the initial design-system pattern set
+- [x] Create a dedicated guidance doc for core controls including text inputs, textareas, select/dropdown triggers, button variants, and any approved checkbox/radio or icon-only action posture
+- [x] Define baseline structural expectations for each supported control type, including containment, edge treatment, and emphasis posture
+- [x] Clarify which controls are considered foundational versus optional in the initial design-system pattern set
 
 ### 2. Action Hierarchy
 - [ ] Define visual and behavioral distinctions between primary, secondary, tertiary/quiet, destructive, disabled, and loading actions
