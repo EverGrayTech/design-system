@@ -32,9 +32,9 @@ Define shared design-system guidance for lists, table-like layouts, row summarie
 - [x] Clarify how comparison-friendly layouts should preserve fast scanning in dark-theme contexts
 
 ### 3. Density Posture
-- [ ] Define the acceptable compactness range for operational applications so dense views feel efficient but not cramped
-- [ ] Cover row padding, grouping rhythm, and separator strength at a pattern level
-- [ ] Ensure guidance reflects the system's premium technical tone rather than generic dashboard styling
+- [x] Define the acceptable compactness range for operational applications so dense views feel efficient but not cramped
+- [x] Cover row padding, grouping rhythm, and separator strength at a pattern level
+- [x] Ensure guidance reflects the system's premium technical tone rather than generic dashboard styling
 
 ### 4. Embedded Interaction Posture
 - [ ] Document expectations for hover, selection, keyboard focus, inline actions, and expand/collapse behavior in dense rows or cards
