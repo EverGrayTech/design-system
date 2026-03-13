@@ -436,3 +436,179 @@ All feedback messages should follow the system's matter-of-fact operational tone
 - Use technical jargon in user-facing messages: ~~"Error 500: Internal Server Error"~~. Translate to user terms: "Something went wrong on our end. Try again in a moment."
 
 ---
+
+## 5. Examples and Reference
+
+### 5.1 Modal Dialog
+
+```
+┌─────────────────────────────────────────────────┐
+│ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │  backdrop: rgba(0,0,0,0.5)
+│ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │
+│ ░░░┌───────────────────────────────────┐░░░░░░░ │
+│ ░░░│  Delete Project                 × │░░░░░░░ │  title: size-lg, weight-semibold
+│ ░░░│                                   │░░░░░░░ │  close: icon-only, text-tertiary
+│ ░░░│  This will permanently delete     │░░░░░░░ │  body: size-sm, text-secondary
+│ ░░░│  "My Project" and all its data.   │░░░░░░░ │
+│ ░░░│  This action cannot be undone.    │░░░░░░░ │
+│ ░░░│                                   │░░░░░░░ │
+│ ░░░│            ┌────────┐ ┌────────┐  │░░░░░░░ │  actions: right-aligned
+│ ░░░│            │ Cancel │ │ Delete │  │░░░░░░░ │  Cancel=tertiary, Delete=destructive-filled
+│ ░░░│            └────────┘ └────────┘  │░░░░░░░ │
+│ ░░░└───────────────────────────────────┘░░░░░░░ │  modal: --color-neutral-elevated
+│ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │  border: --color-border-edge
+│ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │  radius: --radii-lg
+└─────────────────────────────────────────────────┘
+```
+
+### 5.2 Toast Notifications
+
+```
+                                    ┌──────────────────────────────┐
+                                    │ ▌ Changes saved              │  success toast
+                                    │ ▌ Project settings updated.  │  left border: success-fg
+                                    │                           ×  │  auto-dismiss: 4-5s
+                                    └──────────────────────────────┘
+                                    ↕ --spacing-sm
+                                    ┌──────────────────────────────┐
+                                    │ ▌ Unable to sync             │  warning toast
+                                    │ ▌ Will retry automatically.  │  left border: warning-fg
+                                    │                           ×  │  persistent
+                                    └──────────────────────────────┘
+
+  Position: top-right, offset --spacing-lg from viewport edges
+  Background: --color-neutral-elevated
+  Border: --color-border-edge (+ semantic left border)
+  Stack: --spacing-sm gap between toasts
+```
+
+### 5.3 Feedback State Examples
+
+#### Empty State
+```
+┌──────────────────────────────────────────────┐
+│                                              │
+│                                              │
+│                    ◇                        │  icon: 40px, --color-text-tertiary
+│                                              │  geometric, restrained
+│              No projects yet                 │  --typography-size-base, weight-medium
+│                                              │  --color-text-primary
+│       Create your first project to           │  --typography-size-sm
+│             get started.                     │  --color-text-secondary
+│                                              │
+│           ┌─────────────────┐                │
+│           │ Create Project  │                │  primary button
+│           └─────────────────┘                │
+│                                              │
+└──────────────────────────────────────────────┘
+```
+
+#### Loading State — Spinner
+```
+┌──────────────────────────────────────────────┐
+│                                              │
+│                                              │
+│                   ◠                          │  spinner: 24px, 2px stroke
+│                  ◜ ◝                        │  track: --color-text-tertiary
+│                                              │  arc: --color-text-secondary
+│                                              │  animation: linear rotation
+│                                              │
+└──────────────────────────────────────────────┘
+```
+
+#### Loading State — Skeleton
+```
+┌──────────────────────────────────────────────┐
+│  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓    │  header skeleton
+├──────────────────────────────────────────────┤
+│  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓    │  row skeletons
+│  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓    │  --color-neutral-surface
+│  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓    │  pulse animation: opacity 0.4–1.0
+│  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓    │  --motion-duration-slow
+└──────────────────────────────────────────────┘
+```
+
+#### Error Banner
+```
+┌──────────────────────────────────────────────────────────┐
+│  ⚠  Unable to load activity feed.  Try again            │  error banner
+│                                                       ×  │  bg: --color-semantic-error-background
+└──────────────────────────────────────────────────────────┘  text: --color-semantic-error-foreground
+                                                              icon: 16px, error-foreground
+  "Try again" = text link / tertiary action                   persistent until dismissed
+```
+
+#### Error Page
+```
+┌──────────────────────────────────────────────┐
+│                                              │
+│                                              │
+│                    ⊘                        │  icon: 40px, --color-semantic-error-fg
+│                                              │
+│             Connection lost                  │  size-lg, weight-semibold, text-primary
+│                                              │
+│     We couldn't reach the server. This       │  size-sm, text-secondary
+│     may be a temporary network issue.        │
+│                                              │
+│             ┌──────────────┐                 │
+│             │  Try Again   │                 │  primary button
+│             └──────────────┘                 │
+│                                              │
+└──────────────────────────────────────────────┘
+```
+
+### 5.4 Inline vs. Modal Decision Reference
+
+| Scenario | Recommended Pattern | Rationale |
+|---|---|---|
+| User saves a form | Inline success text or toast | Routine, reversible, non-blocking |
+| User deletes a record | Modal confirmation dialog | Irreversible, requires explicit consent |
+| Background file upload completes | Toast notification | Async operation, non-blocking |
+| Form validation fails | Inline field errors + error summary | User needs to correct specific fields |
+| Server is unreachable | Error banner or error page | Persistent issue, may require retry |
+| Session is about to expire | Warning banner or modal | Time-sensitive, may require action |
+| User creates a new entity | Modal form (if context-free) or navigate to creation page | Depends on complexity — 1–3 fields may use a modal; more should use a dedicated page |
+| Bulk operation partially failed | Toast (summary) + inline row indicators | Multiple items, user needs granular feedback |
+
+### 5.5 Token Quick Reference
+
+| Purpose | Token |
+|---|---|
+| Modal/popover/toast background | `--color-neutral-elevated` |
+| Popover-above-modal background | `--color-neutral-overlay` |
+| Overlay border | `1px solid --color-border-edge` |
+| Modal radius | `--radii-lg` |
+| Popover/toast radius | `--radii-md` |
+| Backdrop | `rgba(0, 0, 0, 0.5)` |
+| Modal padding | `--spacing-xl` |
+| Toast padding | `--spacing-md` to `--spacing-lg` |
+| Success text/accent | `--color-semantic-success-foreground` |
+| Success background | `--color-semantic-success-background` |
+| Warning text/accent | `--color-semantic-warning-foreground` |
+| Warning background | `--color-semantic-warning-background` |
+| Error text/accent | `--color-semantic-error-foreground` |
+| Error background | `--color-semantic-error-background` |
+| Info text/accent | `--color-semantic-info-foreground` |
+| Info background | `--color-semantic-info-background` |
+| Spinner track | `--color-text-tertiary` |
+| Spinner arc | `--color-text-secondary` |
+| Skeleton fill | `--color-neutral-surface` |
+| Progress track | `--color-neutral-surface` |
+| Progress fill | `--color-accent-solid-muted` |
+| Modal entrance | `--motion-duration-normal` / `--motion-easing-out` |
+| Modal exit | `--motion-duration-fast` / `--motion-easing-in` |
+| Toast entrance | `--motion-duration-normal` / `--motion-easing-out` |
+| Toast auto-dismiss | `4–6 seconds` |
+| Success transient duration | `2–3 seconds` |
+
+---
+
+## Cross-References
+
+- [System Spec — Motion](system-spec.md#10-motion) — motion philosophy and appropriate/inappropriate uses.
+- [System Spec — Surface Model](system-spec.md#6-surface-model) — edge treatment, depth model, and the prohibition on glassmorphism and glow effects.
+- [System Spec — Semantic Colors](system-spec.md#54-semantic-colors) — semantic state independence from brand accent.
+- [Forms and Action Controls — Validation](forms-and-action-controls.md#33-inline-validation-and-error-messages) — field-level error and warning patterns.
+- [Forms and Action Controls — Dialog Actions](forms-and-action-controls.md#23-button-hierarchy-in-context) — button hierarchy in modal dialogs.
+- [Data-Dense Workspace Patterns — Empty States](data-dense-workspace-patterns.md#56-empty-states) — empty state patterns for dense surfaces.
+- [Consumption Guide](consumption-guide.md) — how downstream products import and use design-system tokens.
