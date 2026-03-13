@@ -27,9 +27,9 @@ Define shared design-system guidance for core form controls, action variants, an
 - [x] Clarify which controls are considered foundational versus optional in the initial design-system pattern set
 
 ### 2. Action Hierarchy
-- [ ] Define visual and behavioral distinctions between primary, secondary, tertiary/quiet, destructive, disabled, and loading actions
-- [ ] Document where accent is appropriate for actions and where neutral treatment should remain the default
-- [ ] Clarify how button hierarchy should operate within dense forms, page headers, and inline workflow contexts
+- [x] Define visual and behavioral distinctions between primary, secondary, tertiary/quiet, destructive, disabled, and loading actions
+- [x] Document where accent is appropriate for actions and where neutral treatment should remain the default
+- [x] Clarify how button hierarchy should operate within dense forms, page headers, and inline workflow contexts
 
 ### 3. Form Support Text Patterns
 - [ ] Document consistent rules for labels, helper text, inline validation, success confirmation, and error messaging
