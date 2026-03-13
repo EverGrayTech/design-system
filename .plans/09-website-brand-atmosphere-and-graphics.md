@@ -22,38 +22,38 @@ Create shared design-system guidance for website-only atmospheric brand treatmen
 ## Implementation Checklist
 
 ### 1. Atmospheric Accent Guidance
-- [ ] Create a dedicated website-atmosphere guidance doc covering ambient gradient fields, subtle radial highlights, restrained hero background energy, and tonal overlays for depth
-- [ ] Define where atmospheric treatments belong, how strong they may be, and where they should not appear
-- [ ] Document acceptable and unacceptable uses of gradient, glow, and background energy in relation to the shared dark-surface model
+- [x] Create a dedicated website-atmosphere guidance doc covering ambient gradient fields, subtle radial highlights, restrained hero background energy, and tonal overlays for depth
+- [x] Define where atmospheric treatments belong, how strong they may be, and where they should not appear
+- [x] Document acceptable and unacceptable uses of gradient, glow, and background energy in relation to the shared dark-surface model
 
 ### 2. Graphic Motif Guidance
-- [ ] Define approved supporting-graphic patterns such as geometric dividers, line-led framework graphics, subtle diagrammatic accents, logo-adjacent framing, and abstract structural backgrounds
-- [ ] Clarify how supporting graphics should reinforce precision and technical character without becoming unrelated illustration styles
-- [ ] Capture boundaries that keep brand graphics structured, restrained, and system-aligned
+- [x] Define approved supporting-graphic patterns such as geometric dividers, line-led framework graphics, subtle diagrammatic accents, logo-adjacent framing, and abstract structural backgrounds
+- [x] Clarify how supporting graphics should reinforce precision and technical character without becoming unrelated illustration styles
+- [x] Capture boundaries that keep brand graphics structured, restrained, and system-aligned
 
 ### 3. Motion Restraint for Marketing Surfaces
-- [ ] Document concrete rules for hero ambient motion, section reveal motion, hover transitions, and CTA emphasis motion
-- [ ] Define acceptable amplitude, timing, frequency, and repetition for website motion
-- [ ] Include explicit rules for what crosses into spectacle, distraction, or accessibility risk
+- [x] Document concrete rules for hero ambient motion, section reveal motion, hover transitions, and CTA emphasis motion
+- [x] Define acceptable amplitude, timing, frequency, and repetition for website motion
+- [x] Include explicit rules for what crosses into spectacle, distraction, or accessibility risk
 
 ### 4. Surface-Atmosphere Interaction Rules
-- [ ] Clarify how atmospheric treatments should interact with layered dark surfaces, borders, edge glints, shadows, section separators, and readable text contrast
-- [ ] Ensure atmosphere strengthens machined layering rather than weakening structure or introducing glassmorphism
-- [ ] Document how overlays and depth cues should remain subordinate to layout and hierarchy
+- [x] Clarify how atmospheric treatments should interact with layered dark surfaces, borders, edge glints, shadows, section separators, and readable text contrast
+- [x] Ensure atmosphere strengthens machined layering rather than weakening structure or introducing glassmorphism
+- [x] Document how overlays and depth cues should remain subordinate to layout and hierarchy
 
 ### 5. Accessibility and Reduced-Motion Guidance
-- [ ] Define reduced-motion expectations for hero/background effects and reveal sequences
-- [ ] Document contrast-preservation rules around gradients and overlays
-- [ ] Ensure decorative motion and atmospheric treatments remain secondary to content readability and interaction clarity
+- [x] Define reduced-motion expectations for hero/background effects and reveal sequences
+- [x] Document contrast-preservation rules around gradients and overlays
+- [x] Ensure decorative motion and atmospheric treatments remain secondary to content readability and interaction clarity
 
 ### 6. Examples and Dos/Don'ts
-- [ ] Add representative examples of acceptable and unacceptable gradient/glow usage, graphic motifs, and ambient motion behavior
-- [ ] Include concise dos/don'ts that downstream marketing sites can apply without interpretation drift
-- [ ] Cross-reference related marketing composition guidance where brand atmosphere intersects with section structure and CTA emphasis
+- [x] Add representative examples of acceptable and unacceptable gradient/glow usage, graphic motifs, and ambient motion behavior
+- [x] Include concise dos/don'ts that downstream marketing sites can apply without interpretation drift
+- [x] Cross-reference related marketing composition guidance where brand atmosphere intersects with section structure and CTA emphasis
 
 ## Acceptance Criteria
-- [ ] Downstream websites can create branded atmospheric treatments without resorting to local invention
-- [ ] Gradient, glow, and motion usage become consistent with the design system's restraint principles
-- [ ] Supporting graphics feel clearly part of the EverGray visual language
-- [ ] Website atmosphere strengthens brand expression without compromising clarity, structure, or accessibility
-- [ ] The guidance clearly supports `evergraytech.com` visual realignment work and future EverGray brand surfaces
+- [x] Downstream websites can create branded atmospheric treatments without resorting to local invention
+- [x] Gradient, glow, and motion usage become consistent with the design system's restraint principles
+- [x] Supporting graphics feel clearly part of the EverGray visual language
+- [x] Website atmosphere strengthens brand expression without compromising clarity, structure, or accessibility
+- [x] The guidance clearly supports `evergraytech.com` visual realignment work and future EverGray brand surfaces
