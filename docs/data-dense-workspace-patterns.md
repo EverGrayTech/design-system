@@ -190,3 +190,85 @@ When users scan a column of similar values (dates, statuses, numbers), alignment
 - Table header text in `--color-text-secondary` naturally recedes against `--color-text-primary` body text, creating an automatic scanning rhythm.
 
 ---
+
+## 3. Density Posture
+
+EverGray applications must find the narrow band between "efficient" and "cramped." Dense surfaces should feel like refined instruments — information-rich without being noisy, compact without being compressed. The density posture is a defining characteristic of the system's premium technical tone.
+
+### 3.1 Acceptable Compactness Range
+
+Density is measured primarily through row height, internal padding, and inter-element spacing. The system defines a controlled range for each.
+
+**Row height ranges:**
+
+| Context | Minimum | Standard | Maximum |
+|---|---|---|---|
+| Table row | `32px` | `36px`–`44px` | `48px` |
+| Stacked row summary | `44px` | `56px`–`64px` | `80px` |
+| Compact toolbar | `32px` | `36px` | `40px` |
+
+- Below the minimum, click targets become unreliable and text becomes cramped on the dark palette.
+- Above the maximum, the surface stops feeling dense and starts feeling spacious — appropriate for marketing or detail views, not for operational lists.
+
+**Internal padding ranges:**
+
+| Element | Horizontal | Vertical |
+|---|---|---|
+| Table cell | `--spacing-md` (`12px`) | `--spacing-sm` (`8px`) |
+| Stacked row | `--spacing-lg` (`16px`) | `--spacing-md` (`12px`) to `--spacing-lg` (`16px`) |
+| Metadata block row | `--spacing-md` (`12px`) to `--spacing-lg` (`16px`) | `--spacing-sm` (`8px`) |
+| Toolbar | `--spacing-md` (`12px`) | `--spacing-sm` (`8px`) |
+
+### 3.2 Grouping Rhythm
+
+Dense surfaces that contain many rows benefit from visual grouping to break the monotony and support scanning.
+
+**Grouped row sections:**
+- When a list or table is divided into logical groups (by status, category, date range, etc.), insert a group header row between sections.
+- Group header: `--color-neutral-surface` background (or transparent on canvas), `--typography-size-xs`, `--typography-weight-semibold`, `--color-text-secondary`. The header should feel like a quiet shelf, not a visual break.
+- Spacing above a group header: `--spacing-md` (`12px`). This is enough to signal a boundary without creating a canyon.
+- Spacing below a group header (before the first row): `--spacing-xs` (`4px`) or no additional spacing if the group header already has bottom padding built in.
+
+**Group count badges:**
+- A group header may include a count in parentheses or a small badge: "(12)" in `--color-text-tertiary`.
+- Do not style group counts as prominent badges. They are supporting information, not primary content.
+
+**Infinite or long lists:**
+- Lists longer than ~30 visible rows should strongly consider grouping, pagination, or virtual scrolling.
+- If a list has no natural grouping, consider providing a compact pagination bar or "load more" pattern rather than rendering hundreds of rows.
+
+### 3.3 Separator Strength
+
+Dividers in dense surfaces must be calibrated to provide structure without creating a distracting grid.
+
+**Calibration principle:** The denser the surface, the fainter the separators should be. Heavy dividers in a dense table create a cage-like appearance.
+
+| Density | Row Divider | Section Divider |
+|---|---|---|
+| Standard (36–44px rows) | `--color-border-edge` | `--color-border-divider` |
+| Compact (32–36px rows) | `--color-border-edge` (consider omitting if row padding provides sufficient visual separation) | `--color-border-divider` |
+| Spacious stacked rows (56–72px) | `--color-border-edge` or spacing-only | `--color-border-divider` |
+
+**Rules:**
+- Never use more than two levels of divider strength in a single surface. Edge dividers between rows and slightly stronger dividers between groups is the maximum.
+- Horizontal dividers only. Do not add vertical column dividers in tables — column separation comes from padding and alignment, not lines.
+- Header-to-body divider: The bottom edge of a table header row uses `--color-border-divider` (one step up from row dividers) to clearly separate the structural header from the data body.
+
+### 3.4 What Premium Density Looks Like
+
+The goal is that an EverGray dense surface looks like it was designed by someone who understands information — not by someone filling a template.
+
+**Premium density characteristics:**
+- Consistent vertical rhythm — every row is the same height, every gap is the same width.
+- Clear hierarchy — the eye travels to identity first, then state, then metadata, without effort.
+- Quiet separators — structure is felt, not stared at.
+- Controlled restraint — there is room to breathe, but no room wasted.
+
+**Generic dashboard characteristics (avoid):**
+- Rows of varying heights without reason.
+- Colored row backgrounds or alternating stripes that create visual noise.
+- Oversized badges and icons that inflate row height.
+- Thick borders or card wrappers around every table.
+- "Data-viz" decorations (sparklines, progress bars, mini-charts) that are not essential to the workflow.
+
+---
