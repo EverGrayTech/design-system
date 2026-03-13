@@ -32,9 +32,9 @@ Define shared design-system guidance for core form controls, action variants, an
 - [x] Clarify how button hierarchy should operate within dense forms, page headers, and inline workflow contexts
 
 ### 3. Form Support Text Patterns
-- [ ] Document consistent rules for labels, helper text, inline validation, success confirmation, and error messaging
-- [ ] Define message hierarchy so support text remains clear without overwhelming the control itself
-- [ ] Clarify placement and tone expectations for recovery guidance and short confirmation messaging
+- [x] Document consistent rules for labels, helper text, inline validation, success confirmation, and error messaging
+- [x] Define message hierarchy so support text remains clear without overwhelming the control itself
+- [x] Clarify placement and tone expectations for recovery guidance and short confirmation messaging
 
 ### 4. Density and Spacing Posture
 - [ ] Define how control sizing and spacing should support operational efficiency without feeling cramped
