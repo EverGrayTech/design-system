@@ -335,3 +335,134 @@ In table rows, card footers, and list items:
 - Actions are right-aligned at the bottom of the dialog, with the primary action on the far right.
 
 ---
+
+## 3. Form Support Text Patterns
+
+Form controls rarely exist in isolation. Labels, helper text, validation messages, and confirmation feedback surround controls to guide the user. These supporting elements must follow a consistent hierarchy so they aid comprehension without overwhelming the control itself.
+
+### 3.1 Labels
+
+Every interactive control must have a visible label. Labels are the primary mechanism for identifying what a control expects.
+
+**Placement:**
+- Labels appear **above** their associated control, left-aligned with the control's leading edge.
+- Spacing between label and control: `--spacing-xs` (`4px`). This tight coupling makes the association unmistakable.
+
+**Typography:**
+- Size: `--typography-size-sm`.
+- Weight: `--typography-weight-medium`.
+- Color: `--color-text-primary`.
+- Letter-spacing: `--typography-letter-spacing-normal`.
+
+**Required indicators:**
+- Required fields display a `*` suffix after the label text, in `--color-semantic-error-foreground`. No additional "(required)" text is needed.
+- Alternatively, if most fields are required, mark optional fields with "(optional)" in `--color-text-tertiary` instead.
+
+**Rules:**
+- Do not use placeholder text as a substitute for a label. Placeholders disappear on input and cannot serve as persistent identification.
+- Do not place labels to the left of controls (inline label layout) in standard forms. Side-by-side label placement is acceptable only in very dense, narrow settings panels where vertical space is constrained, and only if the label-to-control alignment is precise and consistent.
+- Labels must be programmatically associated with their control (`for`/`id`, `aria-labelledby`, or equivalent).
+
+### 3.2 Helper Text
+
+Helper text provides additional context before the user interacts with a control — clarifying expected format, constraints, or purpose.
+
+**Placement:**
+- Helper text appears **below** the control, left-aligned with the control's leading edge.
+- Spacing between control and helper text: `--spacing-xs` (`4px`).
+
+**Typography:**
+- Size: `--typography-size-xs`.
+- Weight: `--typography-weight-regular`.
+- Color: `--color-text-tertiary`.
+
+**Rules:**
+- Keep helper text to one line when possible. Two lines maximum.
+- Helper text is informational, not instructional. Use it for format hints ("YYYY-MM-DD"), constraints ("Maximum 200 characters"), or clarification ("This will be visible to all team members").
+- Do not use helper text for every field. Apply it selectively where the label alone is insufficient.
+- When an error message appears, helper text is **replaced** by the error message — they do not stack.
+
+### 3.3 Inline Validation and Error Messages
+
+Error messages appear when a control's value fails validation. They must be immediately legible, unambiguous, and positioned where the user is already looking.
+
+**Placement:**
+- Error messages appear in the same position as helper text: **below** the control, left-aligned.
+- If helper text was present, the error message **replaces** it (not stacks below it).
+- Spacing between control and error message: `--spacing-xs` (`4px`).
+
+**Typography:**
+- Size: `--typography-size-xs`.
+- Weight: `--typography-weight-regular`.
+- Color: `--color-semantic-error-foreground`.
+
+**Control state change:**
+- The control's border changes to `--color-semantic-error-foreground` (see Section 1.3, Error state).
+- The error border persists until the error condition is resolved.
+
+**Timing:**
+- **On submission:** Validate all fields and display all errors simultaneously. Scroll to the first error if the form extends beyond the viewport.
+- **On blur (field exit):** Validate the field when the user leaves it. This provides early feedback without interrupting active typing.
+- **On change (while error is shown):** Once an error is displayed, re-validate as the user corrects the value. Clear the error as soon as the value becomes valid. Do not wait for another blur event.
+- **Do not validate on every keystroke** for fields that have no natural per-character validation (e.g., an email field should not show "invalid email" after typing one character).
+
+**Message tone:**
+- Error messages should be concise, specific, and actionable.
+- **Do:** "Email address is required", "Must be at least 8 characters", "End date must be after start date".
+- **Don't:** "Invalid input", "Error", "This field has an error", or any message that fails to explain what is wrong or how to fix it.
+
+**Accessibility:**
+- Error messages must be associated with their control via `aria-describedby` or equivalent.
+- Use `aria-invalid="true"` on the control when an error is active.
+- For form-level error summaries (when multiple fields fail on submission), provide a visible summary at the top of the form with links to each errored field. The summary uses `--color-semantic-error-foreground` text and `--color-semantic-error-background` as a subtle background panel.
+
+### 3.4 Warning Messages
+
+Warning messages indicate potential issues that do not block submission but warrant the user's attention.
+
+**Placement:** Same as error messages — below the control, replacing helper text.
+
+**Typography:**
+- Size: `--typography-size-xs`.
+- Color: `--color-semantic-warning-foreground`.
+
+**Control state change:**
+- Border: `--color-semantic-warning-foreground`. The warning border is less urgent than error but still distinct from the default edge.
+
+**When to use:**
+- Approaching a character limit.
+- A value that is technically valid but unusual ("This will grant admin access to all users").
+- A selection that conflicts with a recommendation but is not forbidden.
+
+### 3.5 Success Confirmation
+
+Success states confirm that a value or action has been accepted. They should be brief and transient — the system should feel confident, not congratulatory.
+
+**Inline field success:**
+- Border briefly changes to `--color-semantic-success-foreground`.
+- A small success message may appear below the control: `--typography-size-xs`, `--color-semantic-success-foreground`.
+- The success state is transient: it should fade back to rest after `2–3 seconds` using `--motion-duration-normal` / `--motion-easing-default`.
+
+**Form-level success:**
+- After a successful form submission, display a brief confirmation message near the action that triggered it or at the top of the form area.
+- Use `--color-semantic-success-foreground` text. A subtle `--color-semantic-success-background` panel is acceptable for prominent confirmations.
+- Do not use alert dialogs or modal confirmations for routine successful saves. The confirmation should be inline and non-disruptive.
+
+**Tone:**
+- Keep confirmation messages brief and factual: "Changes saved", "Project created", "Settings updated".
+- Avoid celebratory language: no "Great job!", "Awesome!", or exclamation-heavy messaging. The system should feel matter-of-fact.
+
+### 3.6 Message Hierarchy Summary
+
+When multiple types of support text could apply to a single control, the following priority determines what is shown:
+
+| Priority | Message Type | Replaces |
+|---|---|---|
+| 1 (highest) | Error | Helper text, warning |
+| 2 | Warning | Helper text |
+| 3 | Success (transient) | Helper text (temporarily) |
+| 4 (lowest) | Helper text | — |
+
+Only one support message is visible per control at a time. They do not stack vertically.
+
+---
