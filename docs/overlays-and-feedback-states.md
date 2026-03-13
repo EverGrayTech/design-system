@@ -305,3 +305,134 @@ Errors communicate that something went wrong and typically require user action t
 **Where semantic color leads:** Error-foreground for text, icons, and border accents. Error-background for banner and panel fills. Never use error colors for non-error states.
 
 ---
+
+## 3. Tone and Prominence Rules
+
+Feedback must balance visibility with restraint. An error must be seen — but it must not scream. A success must be felt — but it must not celebrate. The system's operational posture applies to feedback as much as to any other surface.
+
+### 3.1 Prominence Spectrum
+
+Feedback states fall on a spectrum of visual prominence. Each level uses a different combination of color, size, and persistence to match the severity or importance of the message.
+
+| Level | Presentation | Persistence | Color Role | Example |
+|---|---|---|---|---|
+| **Subtle** | Inline text near the trigger | Transient (2–3s) | Semantic foreground only | "Changes saved" |
+| **Moderate** | Toast notification | Auto-dismiss (4–6s) or persistent | Semantic border accent + neutral fill | "File uploaded successfully" |
+| **Prominent** | Banner across a section/page | Persistent until dismissed or resolved | Semantic background + foreground | "Your subscription expires in 3 days" |
+| **Blocking** | Modal dialog or full-surface message | Persistent until user acts | Semantic icon + neutral surface | "Unable to load data — try again" |
+
+**Rules:**
+- Match prominence to severity. Routine success is subtle. Critical errors are blocking. Do not escalate routine feedback to banner or modal level.
+- Within a single page, avoid multiple prominent feedback elements simultaneously. If a banner is already showing, a new toast should not also appear for the same issue.
+- Feedback should never feel like it is competing with the content for attention. Even an error banner should feel integrated into the page, not shouting above it.
+
+### 3.2 Avoiding Alarmist Treatments
+
+The system's calm posture extends to negative states. Errors need to be clear, not aggressive.
+
+**Do not:**
+- Use large semantic-color background fills that dominate a page section.
+- Use animated icons (pulsing, shaking, bouncing) on error or warning states.
+- Display error messages in all-caps or bold-weight body text.
+- Use `--color-semantic-error-foreground` as a background fill for large surfaces. The error-background token exists for this — it is muted and legible.
+- Stack multiple error indicators on the same element (red border + red background + red icon + red text simultaneously).
+
+**Do:**
+- Use a single, clear signal: border color change + message text is sufficient for field-level errors.
+- Use banner patterns for page-level errors with one line of explanation and one recovery action.
+- Keep error and warning messages at the same typographic size as helper text — `--typography-size-xs` to `--typography-size-sm`. Do not enlarge text to signal severity.
+- Let the semantic color token do the severity work. Red text at standard size is already a strong signal on the dark palette.
+
+### 3.3 Avoiding Celebratory Treatments
+
+Success is a confirmation, not a reward. The system acknowledges and moves on.
+
+**Do not:**
+- Use checkmark animations, confetti effects, or entrance flourishes for success states.
+- Display success messages in large type or prominent panels for routine operations.
+- Use `--color-accent-solid` for success states. Accent is for primary actions and brand moments, not for feedback confirmation.
+- Display persistent success messages. Success is transient by nature — if it lingers, it becomes clutter.
+
+**Do:**
+- Use `--color-semantic-success-foreground` text at standard body size for inline confirmation.
+- Auto-dismiss success toasts after 4–5 seconds.
+- Keep success messages factual: "Saved", "Created", "Updated". One to three words is ideal.
+
+### 3.4 Dark-Theme Session Endurance
+
+Feedback states must remain legible and non-fatiguing during extended use sessions.
+
+- Semantic background tokens (`--color-semantic-*-background`) are specifically calibrated for comfortable contrast on the dark palette. Do not substitute brighter or more saturated alternatives.
+- Transient states (success, informational toasts) should fade smoothly rather than vanishing abruptly. The `--motion-duration-normal` fade feels intentional; an instant disappearance feels like a glitch.
+- Persistent banners (warnings, errors) should not pulse, flash, or animate after their initial entrance. They should sit quietly until resolved.
+- Loading spinners and skeleton animations use a low-contrast palette (`--color-text-tertiary` / `--color-neutral-surface`) that does not create peripheral distraction during extended loading periods.
+
+---
+
+## 4. Structured Message Anatomy
+
+Feedback messages vary in complexity from a single phrase to a multi-part explanation with recovery guidance. The system defines a consistent anatomy that scales across contexts.
+
+### 4.1 Message Components
+
+A complete feedback message may include up to four components. Not all are required for every message.
+
+| Component | Purpose | Typography | When to Include |
+|---|---|---|---|
+| **Title** | What happened, in brief | `--typography-size-sm` to `--typography-size-lg`, `--typography-weight-semibold`, `--color-text-primary` | Always, unless the message is an inline single-phrase confirmation |
+| **Description** | Additional context explaining the situation | `--typography-size-sm`, `--color-text-secondary` | When the title alone is insufficient for understanding |
+| **Recovery guidance** | What the user can do about it | `--typography-size-sm`, `--color-text-secondary` | For errors and warnings that have a clear remediation path |
+| **Action** | A clickable next step | Button (primary, secondary, or tertiary depending on context) | When the system can offer a specific recovery or follow-up action |
+
+**Spacing between components:**
+- Title → Description: `--spacing-xs` (`4px`).
+- Description → Recovery guidance: `--spacing-sm` (`8px`). Recovery guidance may be a separate paragraph or part of the description.
+- Last text line → Action: `--spacing-lg` (`16px`).
+
+### 4.2 Scaling Across Contexts
+
+The same message anatomy scales to different presentation contexts by adjusting which components are present and how they are sized.
+
+**Inline (field-level):**
+- Title only. One phrase, `--typography-size-xs`. No description, no action.
+- Example: "Email address is required"
+
+**Toast:**
+- Title + optional short description. No recovery action within the toast (use a text link if absolutely necessary, but prefer directing the user to the relevant surface).
+- Title: `--typography-size-sm`, `--typography-weight-medium`.
+- Description: `--typography-size-xs`, `--color-text-secondary`.
+- Example: Title: "Export complete" / Description: "Your CSV file has been downloaded."
+
+**Banner:**
+- Title + description + optional inline action (text link or tertiary button).
+- All on one or two lines to keep the banner compact.
+- Title: `--typography-size-sm`, `--typography-weight-medium`.
+- Description: Same line or next line, `--typography-size-sm`, `--color-text-secondary`.
+- Example: "Unable to load activity feed. [Try again]"
+
+**Modal / full-surface:**
+- All four components may be present.
+- Title: `--typography-size-lg`, `--typography-weight-semibold`.
+- Description: `--typography-size-sm`, `--color-text-secondary`. May be multiple lines.
+- Recovery guidance: Inline with description or as a separate paragraph.
+- Action: Primary or secondary button below the content.
+- Example: Title: "Connection lost" / Description: "We couldn't reach the server. This may be a temporary network issue." / Action: "Try Again"
+
+### 4.3 Message Tone
+
+All feedback messages should follow the system's matter-of-fact operational tone.
+
+**Do:**
+- State what happened clearly: "Project created", "Unable to save changes".
+- Explain why if it is useful: "The file exceeds the 10MB upload limit".
+- Suggest what to do next: "Try a smaller file or compress it before uploading".
+- Use plain, direct language — no jargon, no euphemisms.
+
+**Do not:**
+- Use exclamation marks for routine feedback: ~~"Save successful!"~~
+- Apologize excessively: ~~"We're sorry, something went wrong"~~. A brief "Something went wrong" is sufficient.
+- Use casual or playful tone: ~~"Oops!", "Yikes!", "Uh oh"~~.
+- Use marketing language: ~~"Great news!", "You're all set!", "Awesome!"~~.
+- Use technical jargon in user-facing messages: ~~"Error 500: Internal Server Error"~~. Translate to user terms: "Something went wrong on our end. Try again in a moment."
+
+---
