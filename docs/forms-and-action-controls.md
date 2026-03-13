@@ -188,3 +188,150 @@ Icon-only buttons provide compact actions where a text label would create unnece
 - Destructive icon-only actions (e.g., delete) should use `--color-semantic-error-foreground` for the icon color at rest, with the standard hover background.
 
 ---
+
+## 2. Action Hierarchy
+
+Buttons are the primary mechanism through which users commit decisions, trigger workflows, and navigate between states. EverGray applications must present a clear, predictable action hierarchy so users can instantly distinguish the most important action from supporting alternatives.
+
+### 2.1 Action Variants
+
+Every button in an EverGray application maps to one of the following semantic variants. Products must not invent additional emphasis levels.
+
+#### Primary
+
+The single most important action on the current page or within the current context. There should be at most one primary action visible per logical section.
+
+| Property | Value |
+|---|---|
+| Background | `--color-accent-solid` |
+| Text | `--color-text-inverse` |
+| Border | none |
+| Radius | `--radii-md` |
+| Weight | `--typography-weight-medium` |
+
+| State | Treatment |
+|---|---|
+| **Rest** | Background: `--color-accent-solid`. Text: `--color-text-inverse`. |
+| **Hover** | Background: `--color-accent-solid-hover`. |
+| **Focus** | Outline ring: `2px solid --color-border-focus`, offset `2px`. |
+| **Active / Pressed** | Background darkens slightly (reduce lightness ~8% from solid). |
+| **Disabled** | Background: `--color-neutral-elevated`. Text: `--color-text-disabled`. Cursor: `not-allowed`. |
+| **Loading** | Text replaced by a subtle spinner or animated dots. Background remains `--color-accent-solid`. The button is non-interactive while loading. Width should not change. |
+
+**When to use:** Page-level commit actions ("Save", "Create Project", "Submit"), dialog confirmations, and workflow-completion actions.
+
+**When not to use:** Do not use primary for every action on a page. If multiple actions feel primary, demote all but one.
+
+#### Secondary
+
+Supporting actions that complement the primary action but carry less weight.
+
+| Property | Value |
+|---|---|
+| Background | `transparent` |
+| Text | `--color-text-primary` |
+| Border | `1px solid --color-border-divider` |
+| Radius | `--radii-md` |
+| Weight | `--typography-weight-medium` |
+
+| State | Treatment |
+|---|---|
+| **Rest** | Border: `--color-border-divider`. Text: `--color-text-primary`. Background: transparent. |
+| **Hover** | Background: `--color-neutral-surface`. Border: `--color-border-focus`. |
+| **Focus** | Outline ring: `2px solid --color-border-focus`, offset `2px`. |
+| **Active / Pressed** | Background: `--color-neutral-elevated`. |
+| **Disabled** | Border: `--color-border-edge`. Text: `--color-text-disabled`. |
+| **Loading** | Same spinner treatment as primary but in `--color-text-secondary`. |
+
+**When to use:** "Cancel", "Back", "Export", secondary form actions, and alternative paths adjacent to a primary action.
+
+#### Tertiary / Quiet
+
+Low-emphasis actions that should be available but not visually competing — inline actions, auxiliary controls, and navigation-like affordances within content.
+
+| Property | Value |
+|---|---|
+| Background | `transparent` |
+| Text | `--color-text-secondary` |
+| Border | none |
+| Radius | `--radii-md` |
+| Weight | `--typography-weight-regular` |
+
+| State | Treatment |
+|---|---|
+| **Rest** | Text: `--color-text-secondary`. Background: transparent. No border. |
+| **Hover** | Text: `--color-text-primary`. Background: `--color-neutral-surface`. |
+| **Focus** | Outline ring: `2px solid --color-border-focus`, offset `2px`. |
+| **Active / Pressed** | Background: `--color-neutral-elevated`. |
+| **Disabled** | Text: `--color-text-disabled`. |
+
+**When to use:** "Learn more", "Reset filters", inline toggle actions, "Add another" links within forms, and low-priority auxiliary actions.
+
+#### Destructive
+
+Actions that delete data, revoke access, or cause irreversible changes. Destructive actions must be visually distinct from standard actions so users do not trigger them accidentally.
+
+| Property | Value |
+|---|---|
+| Background | `transparent` |
+| Text | `--color-semantic-error-foreground` |
+| Border | `1px solid --color-semantic-error-foreground` |
+| Radius | `--radii-md` |
+| Weight | `--typography-weight-medium` |
+
+| State | Treatment |
+|---|---|
+| **Rest** | Text: `--color-semantic-error-foreground`. Border: `--color-semantic-error-foreground`. Background: transparent. |
+| **Hover** | Background: `--color-semantic-error-background`. Border remains. |
+| **Focus** | Outline ring: `2px solid --color-border-focus`, offset `2px`. |
+| **Active / Pressed** | Background darkens slightly from error-background. |
+| **Disabled** | Text: `--color-text-disabled`. Border: `--color-border-edge`. |
+
+**Filled destructive variant:** When a destructive action is confirmed (e.g., inside a confirmation dialog), it may use a filled treatment: background `--color-semantic-error-foreground`, text `--color-text-inverse`. This signals final commitment.
+
+**When to use:** "Delete", "Remove", "Revoke", "Disconnect". Always pair with a confirmation step for irreversible actions.
+
+### 2.2 Accent Usage in Actions
+
+Accent treatment is reserved exclusively for the **primary** action variant. All other variants use neutral, semantic, or transparent treatments.
+
+**Rules:**
+- Only `--color-accent-solid` and `--color-accent-solid-hover` may appear as button background fills. Never use `--color-accent-solid-muted` as a button background.
+- The brand gradient must not be used as a button fill in application contexts. The gradient is reserved for brand moments on the marketing website.
+- Destructive actions use semantic error colors, not accent. Accent is always a positive or forward-moving signal.
+- If a page has no clear primary action (e.g., a settings page with only "Save" and "Cancel"), "Save" takes primary, "Cancel" takes secondary. If the page genuinely has no commit action, no accent button is necessary.
+
+### 2.3 Button Hierarchy in Context
+
+#### Page headers
+
+Page-level actions appear in the page header region (see [Application Shell and Navigation](application-shell-and-navigation.md), Section 1.3).
+
+- **Primary action:** Right-aligned, uses the primary variant with accent fill. One per page header.
+- **Secondary actions:** Adjacent to primary, using secondary (outline) variant. If more than two secondary actions exist, group extras behind an overflow menu (icon-only "more" button).
+- **Destructive page actions** (e.g., "Delete Project") should not appear in the page header. Place them in a settings or danger zone section within the page content.
+
+#### Dense forms
+
+In multi-field forms:
+
+- Place the primary action ("Save", "Submit") and its companion secondary action ("Cancel") at the bottom of the form, left-aligned.
+- Do not repeat the primary action at both the top and bottom of a long form. Use a single action group at the form's end.
+- If a form is long enough to push the action group below the fold, consider a sticky footer bar containing the actions. The footer bar uses `--color-neutral-chrome` background and `--color-border-edge` top border — matching the shell chrome posture.
+
+#### Inline workflow contexts
+
+In table rows, card footers, and list items:
+
+- Use tertiary (quiet) or icon-only action buttons.
+- Do not use primary (accent) buttons inline within repeating content. Accent in a list creates visual noise and undermines the hierarchy.
+- Destructive inline actions (e.g., row-level delete) use icon-only buttons with `--color-semantic-error-foreground` icons.
+
+#### Dialog and modal actions
+
+- The primary dialog action (e.g., "Confirm", "Save") uses the primary variant.
+- Dismissive actions ("Cancel", "Close") use tertiary or secondary variant.
+- Destructive confirmation dialogs use the filled destructive variant for the confirm action.
+- Actions are right-aligned at the bottom of the dialog, with the primary action on the far right.
+
+---
