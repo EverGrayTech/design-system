@@ -22,9 +22,9 @@ Define shared design-system guidance for overlays, modal workflows, and common f
 ## Implementation Checklist
 
 ### 1. Overlay and Modal Guidance
-- [ ] Create a dedicated guidance doc covering modal surfaces, headers, actions, close affordances, backdrop treatment, elevated-layer behavior, and enter/exit motion posture
-- [ ] Define how overlays should preserve machined layering and readable structure without glassy or glow-heavy effects
-- [ ] Clarify the difference between modal interruption, lightweight overlay support, and inline alternatives where relevant
+- [x] Create a dedicated guidance doc covering modal surfaces, headers, actions, close affordances, backdrop treatment, elevated-layer behavior, and enter/exit motion posture
+- [x] Define how overlays should preserve machined layering and readable structure without glassy or glow-heavy effects
+- [x] Clarify the difference between modal interruption, lightweight overlay support, and inline alternatives where relevant
 
 ### 2. Feedback-State Patterns
 - [ ] Document consistent guidance for empty, loading, progress, success, warning, and error states
