@@ -272,3 +272,115 @@ The goal is that an EverGray dense surface looks like it was designed by someone
 - "Data-viz" decorations (sparklines, progress bars, mini-charts) that are not essential to the workflow.
 
 ---
+
+## 4. Embedded Interaction Posture
+
+Dense surfaces are not static displays — users hover, select, focus, and act on rows. Interaction states must remain legible and predictable without disrupting the calm structure of the surface.
+
+### 4.1 Row Hover
+
+Hover feedback acknowledges that a row is interactive without creating visual noise.
+
+**Treatment:**
+- Background: `--color-neutral-surface` applied to the full row. On surfaces that already use `--color-neutral-surface` as the resting background (e.g., rows inside a surface panel), use `--color-neutral-elevated` for hover instead.
+- Transition: `--motion-duration-fast` / `--motion-easing-default`.
+- Text colors do not change on hover. The background shift alone signals interactivity.
+
+**Rules:**
+- Every interactive row — whether selectable, clickable, or containing inline actions — must show a hover state.
+- Non-interactive rows (read-only data in a static display) should not show hover. If the surface is entirely non-interactive, no rows should respond to hover.
+- Do not use border-based or outline-based hover indicators on rows. Background tonal shift is the appropriate signal.
+
+### 4.2 Row Selection
+
+Selection indicates that a row is the current working context — the record the user is viewing, editing, or acting on.
+
+**Single selection:**
+- Background: `--color-neutral-surface` (persistent, not just on hover).
+- Leading indicator: A `2px`–`3px` vertical bar on the left edge of the row using `--color-accent-solid`. This mirrors the navigation active-indicator pattern from [Application Shell and Navigation](application-shell-and-navigation.md), Section 2.1.
+- Text: Primary identity text may shift to `--typography-weight-medium` if not already. Other text colors remain unchanged.
+
+**Multi-selection (checkbox-based):**
+- Each row includes a leading checkbox (see [Forms and Action Controls](forms-and-action-controls.md), Section 1.6).
+- Selected rows receive `--color-neutral-surface` background.
+- A bulk-action toolbar appears above the table when one or more rows are selected. The toolbar uses `--color-neutral-surface` background with `--color-border-edge` bottom border and displays the selection count alongside available bulk actions.
+- The "select all" checkbox in the header row follows standard indeterminate behavior when some rows are selected.
+
+**Rules:**
+- Selection state must be visually distinct from hover. Hover is transient (mouse position); selection is persistent (user choice). The accent indicator bar provides this distinction.
+- In a single-selection list (e.g., master-detail layout), clicking a row selects it and deselects the previously selected row.
+- Selected rows must remain visually identifiable even when the mouse hovers elsewhere.
+
+### 4.3 Keyboard Focus
+
+Keyboard focus enables navigation through dense surfaces without a mouse. It must be unambiguous and meet WCAG 2.2 focus-visibility requirements.
+
+**Treatment:**
+- Focus ring: `2px solid --color-border-focus`, offset `2px` from the row boundary. Applied to the entire row when using arrow-key navigation, or to individual focusable elements within the row (buttons, links) when using Tab.
+- The focus ring appears on top of any existing hover or selection background.
+
+**Navigation model:**
+- **Arrow keys** move focus between rows (up/down). The focused row should scroll into view if necessary.
+- **Tab** moves focus into the row's interactive elements (action buttons, links, checkboxes), then to the next row's interactive elements. Provide a single Tab stop per row when possible, with arrow keys for intra-row navigation.
+- **Enter** or **Space** on a focused row activates its primary action (open detail, select, toggle).
+- **Escape** clears selection or exits the focused surface, returning focus to the parent context.
+
+**Rules:**
+- Keyboard focus must never be invisible. If a surface is keyboard-navigable, every focused state must be visually obvious.
+- Do not trap focus within a table or list unless it is a modal context.
+
+### 4.4 Inline Actions
+
+Inline actions allow users to act on a specific row without navigating away. They appear within the row itself, typically at the trailing edge.
+
+**Visibility strategies:**
+
+| Strategy | When to Use |
+|---|---|
+| **Always visible** | When the surface has 1–2 actions per row that are essential to the workflow (e.g., edit, delete). Always-visible actions use icon-only buttons at `--color-text-tertiary` at rest, brightening to `--color-text-secondary` on row hover. |
+| **Visible on hover** | When actions are supporting, not primary. The action column is empty at rest; icon-only buttons appear when the row is hovered. Use `--motion-duration-fast` for the reveal. |
+| **Overflow menu** | When a row has three or more actions. Show a single "more" icon-only button (three dots). The menu opens as a popover using `--color-neutral-elevated` background. |
+
+**Styling:**
+- Inline action buttons follow the icon-only action posture from [Forms and Action Controls](forms-and-action-controls.md), Section 1.8.
+- Action buttons should not increase the row height. They must fit within the standard row dimension.
+- Destructive inline actions (delete, remove) use `--color-semantic-error-foreground` for the icon.
+
+**Rules:**
+- Inline actions must not be the only way to access critical functionality. Ensure the same actions are available from the record's detail view or a context menu.
+- Do not place text-label buttons inline in dense table rows. The text creates horizontal crowding and breaks the column rhythm. Icon-only buttons only.
+- On hover-reveal actions: the actions must also be accessible via keyboard focus (visible when the row receives keyboard focus, not just mouse hover).
+
+### 4.5 Selectable Rows vs. Embedded Actions
+
+When a row is both selectable (clicking it navigates or opens a detail view) and contains inline actions (edit, delete buttons), the interaction model must be unambiguous.
+
+**Resolution rules:**
+- The row click target activates the primary row action (selection or navigation). Inline action buttons have their own click targets that do not propagate to the row.
+- Inline action buttons must stop event propagation (`stopPropagation`) so that clicking an action button does not also select/navigate the row.
+- Click targets must be distinct: the action button area is exclusively for the action; the remaining row area is for selection/navigation.
+- On touch devices, where hover is unavailable, always-visible inline actions are preferred over hover-reveal.
+
+**Visual disambiguation:**
+- Inline action buttons should have a visible hover state (background shift) that distinguishes them from the row's hover state. The button's `--color-neutral-surface` hover background contrasts against the row's hover background.
+- If the row is selectable, the cursor should be `pointer` over the row body and `default` (or `pointer`) over the action buttons — but both areas should feel intentionally interactive, not ambiguous.
+
+### 4.6 Expand/Collapse Behavior
+
+Some dense rows contain nested detail that can be expanded inline — sub-rows, property panels, or content previews.
+
+**Trigger:**
+- An expand/collapse chevron or disclosure icon on the leading edge of the row, sized `16px`. The icon rotates `90°` when expanded using `--motion-duration-fast` / `--motion-easing-default`.
+- The trigger must be keyboard-accessible (focusable, activated by Enter or Space).
+
+**Expanded content area:**
+- Background: Same as the row, or `--color-neutral-surface` if the row is on canvas. The expanded area should feel like a continuation of the row, not a separate card.
+- Top/bottom separation: `--color-border-edge` dividers at the top and bottom of the expanded area, or use indentation (`--spacing-xl` left padding) to visually associate the expanded content with its parent row.
+- The expanded area collapses with `--motion-duration-fast` / `--motion-easing-default`.
+
+**Rules:**
+- Do not expand all rows simultaneously by default. Expansion is a user-initiated action on individual rows.
+- Expanded rows should not shift sibling rows in a way that causes layout disorientation. The expansion should push content below it downward smoothly.
+- Deeply nested expansions (expand within expand) should be avoided. If the content model requires deep nesting, consider a separate detail panel or navigation instead.
+
+---
