@@ -384,3 +384,174 @@ Some dense rows contain nested detail that can be expanded inline — sub-rows, 
 - Deeply nested expansions (expand within expand) should be avoided. If the content model requires deep nesting, consider a separate detail panel or navigation instead.
 
 ---
+
+## 5. Examples and Reference
+
+### 5.1 Table Layout with Interaction States
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│  Name           Status      Assignee     Due         Actions     │  header: --color-neutral-surface bg
+│                                                                  │  text: --color-text-secondary, weight-medium
+├──────────────────────────────────────────────────────────────────┤  divider: --color-border-divider
+│  Project Alpha   ● Active   J. Chen      Mar 15      ✎  ⋯      │  identity: --color-text-primary, weight-medium
+│──────────────────────────────────────────────────────────────────│  divider: --color-border-edge
+│  Project Beta    ● Active   M. Park      Mar 22      ✎  ⋯      │  metadata: --color-text-secondary
+│──────────────────────────────────────────────────────────────────│
+▌ Project Gamma   ● Draft    A. Rossi     Apr 01      ✎  ⋯       │  SELECTED: surface bg + accent bar
+│──────────────────────────────────────────────────────────────────│
+│░ Project Delta   ○ Archived  K. Tanaka    Feb 28      ✎  ⋯     │  HOVER: surface bg (tonal shift)
+│──────────────────────────────────────────────────────────────────│
+│  Project Epsilon ● Active   L. Müller    Apr 10      ✎  ⋯      │
+└──────────────────────────────────────────────────────────────────┘
+
+Legend:
+  ▌  = 2-3px accent-solid indicator bar (selected row)
+  ░  = --color-neutral-surface hover background
+  ●  = semantic dot (success-foreground for Active, text-tertiary for Draft)
+  ○  = neutral dot (text-tertiary for Archived)
+  ✎  = edit icon, --color-text-secondary
+  ⋯  = overflow menu icon, --color-text-tertiary
+```
+
+### 5.2 Stacked Row Summary List
+
+```
+┌────────────────────────────────────────────────────┐
+│                                                    │
+│  Website Redesign                    ┌──────────┐  │  title: --color-text-primary, weight-medium
+│  Marketing · Due Mar 20 · J. Chen    │  Active  │  │  metadata: --color-text-secondary, size-xs
+│                                      └──────────┘  │  badge: success-bg + success-fg
+│────────────────────────────────────────────────────│  divider: --color-border-edge
+│                                                    │
+│  API Migration                       ┌──────────┐  │
+│  Engineering · Due Apr 05 · M. Park  │ In Review│  │  badge: info-bg + info-fg
+│                                      └──────────┘  │
+│────────────────────────────────────────────────────│
+│                                                    │
+│  Q1 Report                           ┌──────────┐  │
+│  Finance · Due Mar 31 · A. Rossi     │ Overdue  │  │  badge: error-bg + error-fg
+│                                      └──────────┘  │
+│                                                    │
+└────────────────────────────────────────────────────┘
+
+Row structure:
+  Line 1: Title (primary identity, weight-medium)
+  Line 2: Category · Due date · Assignee (metadata, text-secondary, size-xs)
+  Right:  Status badge (semantic background + foreground, size-xs, weight-medium)
+```
+
+### 5.3 Grouped Metadata Block
+
+```
+┌────────────────────────────────────────────┐
+│  Project Details           (surface panel) │  --color-neutral-surface bg
+│                                            │  --color-border-edge border
+│  General                                   │  section: weight-semibold, text-primary
+│  ─────────────────────────────────────     │  divider: --color-border-divider
+│  Name          Website Redesign            │  key: text-secondary, size-xs
+│  Owner         J. Chen                     │  value: text-primary, size-sm
+│  Created       Mar 01, 2026                │
+│  Status        ● Active                    │  spacing: --spacing-sm between rows
+│                                            │
+│  Timeline                                  │  --spacing-xl above section heading
+│  ─────────────────────────────────────     │
+│  Start Date    Mar 01, 2026                │
+│  Due Date      Mar 20, 2026                │
+│  Duration      20 days                     │
+│                                            │
+└────────────────────────────────────────────┘
+```
+
+### 5.4 Multi-Selection with Bulk Actions
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│  ☑ 3 selected          ┌────────┐ ┌──────────┐ ┌────────────┐   │  bulk toolbar
+│                         │ Export │ │ Archive  │ │  Delete    │   │  --color-neutral-surface bg
+│                         └────────┘ └──────────┘ └────────────┘   │  --color-border-edge bottom
+├──────────────────────────────────────────────────────────────────┤
+│  ☐  Name           Status      Assignee     Due                 │  header
+├──────────────────────────────────────────────────────────────────┤
+│  ☑  Project Alpha   ● Active   J. Chen      Mar 15              │  SELECTED (surface bg)
+│──────────────────────────────────────────────────────────────────│
+│  ☐  Project Beta    ● Active   M. Park      Mar 22              │
+│──────────────────────────────────────────────────────────────────│
+│  ☑  Project Gamma   ● Draft    A. Rossi     Apr 01              │  SELECTED
+│──────────────────────────────────────────────────────────────────│
+│  ☑  Project Delta   ○ Archived  K. Tanaka    Feb 28             │  SELECTED
+└──────────────────────────────────────────────────────────────────┘
+
+  Export, Archive = secondary buttons
+  Delete = destructive button
+  ☑ = checked checkbox (--color-accent-solid)
+  ☐ = unchecked checkbox
+```
+
+### 5.5 Side-by-Side Comparison
+
+When users need to compare two records or metadata groups, a side-by-side layout is appropriate.
+
+**Structure:**
+- Two metadata blocks placed horizontally, each occupying roughly half the available width.
+- Both blocks share the same key labels in the same vertical order so values align horizontally across the comparison.
+- Key labels: `--color-text-secondary`. Values: `--color-text-primary`.
+- Differing values may be highlighted with `--typography-weight-medium` to draw the eye to the differences.
+- A faint vertical `--color-border-divider` separator between the two blocks, or a `--spacing-xl` gap if separator-free.
+
+**Rules:**
+- Do not compare more than two records simultaneously in a side-by-side layout. For three or more, use a table layout with records as rows and attributes as columns.
+- Label alignment must be identical between the two blocks. If one record lacks an attribute, show an empty value or "—" in `--color-text-tertiary`.
+- Side-by-side comparison is a product-level decision — not every product needs it. The design system provides the structural pattern; products decide when to apply it.
+
+### 5.6 Empty States
+
+When a dense surface has no data, display an empty state that communicates the absence clearly without decorative filler.
+
+**Structure:**
+- Centered within the surface area.
+- Primary message: `--typography-size-base`, `--typography-weight-medium`, `--color-text-primary`. Brief and factual: "No projects yet", "No results match your filter".
+- Supporting message (optional): `--typography-size-sm`, `--color-text-secondary`. Suggests a next step: "Create your first project to get started", "Try adjusting your filter criteria".
+- Action (optional): A single primary or tertiary button below the message: "Create Project", "Clear Filters".
+- Icon (optional): A restrained geometric icon above the message, `32px`–`48px`, `--color-text-tertiary`. No mascots, illustrations, or playful graphics.
+
+**Spacing:**
+- `--spacing-xl` between the icon and the primary message.
+- `--spacing-sm` between the primary and supporting messages.
+- `--spacing-lg` between the supporting message and the action button.
+
+### 5.7 Token Quick Reference
+
+| Purpose | Token |
+|---|---|
+| Table body background | `--color-neutral-canvas` |
+| Header row background | `--color-neutral-surface` |
+| Row hover background | `--color-neutral-surface` (or `--color-neutral-elevated` on surface) |
+| Selected row background | `--color-neutral-surface` |
+| Selection indicator | `2–3px --color-accent-solid` left bar |
+| Row divider | `1px solid --color-border-edge` |
+| Section/header divider | `1px solid --color-border-divider` |
+| Focus ring | `2px solid --color-border-focus` |
+| Primary identity text | `--color-text-primary`, `--typography-weight-medium` |
+| Key metadata text | `--color-text-secondary` |
+| Secondary analytics text | `--color-text-tertiary` |
+| Badge background (semantic) | `--color-semantic-*-background` |
+| Badge text (semantic) | `--color-semantic-*-foreground` |
+| Inline action icons | `--color-text-secondary` (rest), `--color-text-primary` (hover) |
+| Destructive action icon | `--color-semantic-error-foreground` |
+| Cell horizontal padding | `--spacing-md` |
+| Row vertical padding | `--spacing-sm` |
+| Group header spacing above | `--spacing-md` |
+| State transitions | `--motion-duration-fast` / `--motion-easing-default` |
+
+---
+
+## Cross-References
+
+- [System Spec — Data-Dense Surfaces](system-spec.md#125-data-dense-surfaces) — component-level behavioral principles for lists, tables, and workflow-heavy views.
+- [System Spec — Surface Model](system-spec.md#6-surface-model) — edge treatment, depth model, and layering philosophy.
+- [Application Shell and Navigation — Workspace Container](application-shell-and-navigation.md#15-workspace-container) — the primary task surface where dense patterns live.
+- [Application Shell and Navigation — Selection States](application-shell-and-navigation.md#21-state-definitions) — navigation selection patterns that dense-surface selection mirrors.
+- [Forms and Action Controls — Icon-Only Actions](forms-and-action-controls.md#18-icon-only-action-button) — styling for inline row actions.
+- [Forms and Action Controls — Checkbox](forms-and-action-controls.md#16-checkbox) — multi-selection checkbox guidance.
+- [Consumption Guide](consumption-guide.md) — how downstream products import and use design-system tokens.
