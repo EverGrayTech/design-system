@@ -42,13 +42,13 @@ Define shared design-system guidance for overlays, modal workflows, and common f
 - [x] Define how message anatomy should scale across inline, panel, and modal contexts
 
 ### 5. Examples and Decision Guidance
-- [ ] Add representative state examples for empty/loading/success/error treatments and modal hierarchy
-- [ ] Include guidance for choosing inline feedback versus modal interruption when both are possible
-- [ ] Cross-reference related controls and status-signal guidance where semantic states overlap
+- [x] Add representative state examples for empty/loading/success/error treatments and modal hierarchy
+- [x] Include guidance for choosing inline feedback versus modal interruption when both are possible
+- [x] Cross-reference related controls and status-signal guidance where semantic states overlap
 
 ## Acceptance Criteria
-- [ ] Consuming apps can present modal workflows and feedback states coherently
-- [ ] Feedback patterns feel calm, legible, and semantically clear in dark-theme products
-- [ ] Empty and error states no longer require product teams to invent their own visual language from scratch
-- [ ] Overlay structure, layering, and motion remain aligned with the system's machined and restrained posture
-- [ ] The guidance clearly supports Plot Your Path plans 28, 30, and 32 and future EverGray applications
+- [x] Consuming apps can present modal workflows and feedback states coherently
+- [x] Feedback patterns feel calm, legible, and semantically clear in dark-theme products
+- [x] Empty and error states no longer require product teams to invent their own visual language from scratch
+- [x] Overlay structure, layering, and motion remain aligned with the system's machined and restrained posture
+- [x] The guidance clearly supports Plot Your Path plans 28, 30, and 32 and future EverGray applications
