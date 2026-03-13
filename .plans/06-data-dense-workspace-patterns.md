@@ -37,9 +37,9 @@ Define shared design-system guidance for lists, table-like layouts, row summarie
 - [x] Ensure guidance reflects the system's premium technical tone rather than generic dashboard styling
 
 ### 4. Embedded Interaction Posture
-- [ ] Document expectations for hover, selection, keyboard focus, inline actions, and expand/collapse behavior in dense rows or cards
-- [ ] Clarify how interaction states should remain visible without disrupting the calm structure of the surface
-- [ ] Address how selectable rows and embedded actions should coexist without ambiguous affordances
+- [x] Document expectations for hover, selection, keyboard focus, inline actions, and expand/collapse behavior in dense rows or cards
+- [x] Clarify how interaction states should remain visible without disrupting the calm structure of the surface
+- [x] Address how selectable rows and embedded actions should coexist without ambiguous affordances
 
 ### 5. Examples and Comparison Guidance
 - [ ] Add representative examples of list-row hierarchy, separator behavior, and selectable data-row states
