@@ -83,10 +83,12 @@ This generates consumable token outputs under `dist/`:
 
 | Output | Path | Format |
 |---|---|---|
-| CSS custom properties | `dist/css/variables.css` | `:root` block with `--`-prefixed variables |
-| JSON flat export | `dist/json/tokens.json` | PascalCase key → value pairs |
+| CSS custom properties | `dist/variables.css` | `:root` block with `--`-prefixed variables |
+| JSON flat export | `dist/tokens.json` | PascalCase key → value pairs |
+| Static Assets | `dist/*.svg` | Scalable vector graphics for apps and websites |
 
 Source tokens live in `tokens/` — see [tokens/README.md](tokens/README.md) for the structure and design rationale.
+Static brand assets (such as the logo) live in `assets/` and are copied into `dist/` during the build.
 
 ### Clean
 

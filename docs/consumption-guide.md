@@ -4,14 +4,16 @@ This guide explains how downstream repositories should use the generated outputs
 
 ## What to Import
 
-The design system generates two outputs under `dist/`:
+The design system generates outputs under `dist/`:
 
 | Output | Path | Use when |
 |---|---|---|
-| CSS custom properties | `dist/css/variables.css` | Styling with CSS or any CSS-in-JS that supports custom properties |
-| JSON flat export | `dist/json/tokens.json` | Programmatic access in JS/TS (e.g., theming logic, style objects, SSR) |
+| CSS custom properties | `dist/variables.css` | Styling with CSS or any CSS-in-JS that supports custom properties |
+| JSON flat export | `dist/tokens.json` | Programmatic access in JS/TS (e.g., theming logic, style objects, SSR) |
+| Brand logo (SVG) | `dist/logo.svg` | Rendering the EverGray Tech logo in apps or websites |
 
-Both files are generated from the same source tokens. They always agree.
+CSS and JSON files are generated from the same source tokens. They always agree.  
+Static assets (such as the logo) are copied into the package during the build process.
 
 ### Installation
 
@@ -100,7 +102,7 @@ Import the generated CSS variables file, then reference them in your stylesheets
 **Import:**
 
 ```css
-@import '@evergraytech/design-system/dist/css/variables.css';
+@import '@evergraytech/design-system/dist/variables.css';
 ```
 
 **Usage:**
@@ -136,7 +138,7 @@ Import the flat JSON export for programmatic use.
 **Import:**
 
 ```ts
-import tokens from '@evergraytech/design-system/dist/json/tokens.json';
+import tokens from '@evergraytech/design-system/dist/tokens.json';
 
 // Access values directly
 const canvasBg = tokens.ColorNeutralCanvas;     // "#121216"
@@ -152,7 +154,7 @@ For a Next.js app, import the CSS variables in your root layout so they're avail
 **`app/layout.tsx`:**
 
 ```tsx
-import '@evergraytech/design-system/dist/css/variables.css';
+import '@evergraytech/design-system/dist/variables.css';
 import './globals.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -179,7 +181,7 @@ body {
 **Server component with JSON tokens:**
 
 ```tsx
-import tokens from '@evergraytech/design-system/dist/json/tokens.json';
+import tokens from '@evergraytech/design-system/dist/tokens.json';
 
 export default function StatusBadge({ status }: { status: 'success' | 'error' }) {
   const color = status === 'success'
