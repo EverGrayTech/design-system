@@ -567,3 +567,225 @@ These are recommendations, not hard constraints. Products may adjust based on co
 - **Do not** mix compact and default controls in the same form without a clear contextual reason (e.g., a compact filter bar above a default-sized creation form).
 
 ---
+
+## 5. Examples and Reference
+
+### 5.1 Standard Form Field Anatomy
+
+A complete form field is composed of three vertical layers: label, control, and support text. The following shows the spatial relationships for a text input in various states.
+
+```
+┌──────────────────────────────────────────┐
+│  Rest State                              │
+│                                          │
+│  Project Name *                          │  label: --typography-size-sm, weight-medium
+│  ┌──────────────────────────────────┐    │       --color-text-primary
+│  │  Enter project name              │    │  ↕ --spacing-xs (4px)
+│  └──────────────────────────────────┘    │  control: --color-neutral-surface bg
+│  Letters, numbers, and hyphens only      │       --color-border-edge border
+│                                          │  ↕ --spacing-xs (4px)
+│                                          │  helper: --typography-size-xs
+│                                          │       --color-text-tertiary
+└──────────────────────────────────────────┘
+
+┌──────────────────────────────────────────┐
+│  Focus State                             │
+│                                          │
+│  Project Name *                          │
+│  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓    │  border: --color-border-focus
+│  ┃  my-new-project                  ┃    │  box-shadow: 0 0 0 2px --color-border-focus
+│  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛    │
+│  Letters, numbers, and hyphens only      │
+│                                          │
+└──────────────────────────────────────────┘
+
+┌──────────────────────────────────────────┐
+│  Error State                             │
+│                                          │
+│  Project Name *                          │
+│  ┌──────────────────────────────────┐    │  border: --color-semantic-error-foreground
+│  │  my project!                     │    │
+│  └──────────────────────────────────┘    │
+│  Name cannot contain spaces or symbols   │  error replaces helper text
+│                                          │  --color-semantic-error-foreground
+└──────────────────────────────────────────┘
+
+┌──────────────────────────────────────────┐
+│  Disabled State                          │
+│                                          │
+│  Project Name *                          │  label: --color-text-disabled
+│  ┌──────────────────────────────────┐    │  bg: --color-neutral-canvas
+│  │  my-project                      │    │  text: --color-text-disabled
+│  └──────────────────────────────────┘    │  cursor: not-allowed
+│                                          │
+└──────────────────────────────────────────┘
+```
+
+### 5.2 Action Group Examples
+
+#### Page Header Actions
+
+```
+┌────────────────────────────────────────────────────────────┐
+│  Page Header                                               │
+│                                                            │
+│  Projects > Settings                                       │
+│  Project Settings                   ┌────────┐ ┌────────┐  │
+│                                     │ Cancel │ │  Save  │  │
+│                                     └────────┘ └────────┘  │
+│                                     secondary    primary   │
+└────────────────────────────────────────────────────────────┘
+
+  Cancel = secondary variant (outline, --color-border-divider)
+  Save   = primary variant (--color-accent-solid bg, --color-text-inverse)
+```
+
+#### Form Footer Actions
+
+```
+┌──────────────────────────────────────────┐
+│  (form fields above)                     │
+│                                          │
+│  ↕ --spacing-xl (24px)                   │
+│                                          │
+│  ┌────────┐  ┌────────┐                  │
+│  │  Save  │  │ Cancel │                  │  left-aligned
+│  └────────┘  └────────┘                  │  --spacing-sm (8px) gap
+│   primary     secondary                  │
+│                                          │
+└──────────────────────────────────────────┘
+```
+
+#### Inline Table Actions
+
+```
+┌────────┬────────────┬──────────┬─────────┐
+│  Name  │  Status    │  Date    │ Actions │
+├────────┼────────────┼──────────┼─────────┤
+│  Proj  │  Active    │  Mar 12  │  ✎  🗑  │  icon-only buttons
+│  Proj  │  Draft     │  Mar 10  │  ✎  🗑  │  --spacing-xs (4px) gap
+│  Proj  │  Archived  │  Feb 28  │  ✎  —  │  🗑 uses error-foreground
+└────────┴────────────┴──────────┴─────────┘
+
+  ✎ = edit icon, --color-text-secondary
+  🗑 = delete icon, --color-semantic-error-foreground
+  — = disabled, --color-text-disabled
+```
+
+#### Destructive Confirmation Dialog
+
+```
+┌────────────────────────────────────────────┐
+│                                            │
+│  Delete Project                            │  title: --typography-size-lg
+│                                            │
+│  This will permanently delete "My Project" │  body: --color-text-secondary
+│  and all its data. This cannot be undone.  │
+│                                            │
+│                     ┌────────┐ ┌──────────┐│
+│                     │ Cancel │ │  Delete  ││  right-aligned
+│                     └────────┘ └──────────┘│
+│                     tertiary   destructive │
+│                                (filled)    │
+└────────────────────────────────────────────┘
+
+  Cancel = tertiary variant (text-only, --color-text-secondary)
+  Delete = filled destructive (--color-semantic-error-foreground bg,
+           --color-text-inverse text)
+```
+
+### 5.3 Validation Scenario Reference
+
+| Scenario | Trigger | Control State | Message |
+|---|---|---|---|
+| Required field left empty | Blur or submit | Error border | "Project name is required" |
+| Value too short | Blur | Error border | "Must be at least 3 characters" |
+| Invalid format | Blur | Error border | "Enter a valid email address" |
+| Value corrected while error shown | Change (per keystroke) | Clears to rest when valid | Error message removed |
+| Approaching character limit | Change | Warning border | "12 characters remaining" |
+| Character limit exceeded | Change | Error border | "Exceeds maximum of 200 characters" |
+| Successful async validation | Async response | Success border (transient) | "Username is available" |
+| Multiple errors on submit | Submit | All errored fields marked | Error summary at top + per-field messages |
+
+### 5.4 Recommended Variant Naming
+
+When implementing shared components or design tokens for action controls, the following naming conventions improve cross-product consistency:
+
+**Button variants:**
+
+| Variant Name | Maps to |
+|---|---|
+| `primary` | Accent-filled commit action (Section 2.1) |
+| `secondary` | Outlined supporting action (Section 2.1) |
+| `tertiary` or `quiet` | Borderless low-emphasis action (Section 2.1) |
+| `destructive` | Error-outlined destructive action (Section 2.1) |
+| `destructive-filled` | Error-filled confirmed destructive action (Section 2.1) |
+| `icon` | Icon-only action button (Section 1.8) |
+
+**Button sizes:**
+
+| Size Name | Height |
+|---|---|
+| `default` or `md` | `36px`–`40px` |
+| `compact` or `sm` | `32px` |
+
+**Form field states (semantic):**
+
+| State Name | Meaning |
+|---|---|
+| `default` | Rest, no validation state |
+| `error` | Failed validation |
+| `warning` | Valid but cautionary |
+| `success` | Confirmed valid (transient) |
+| `disabled` | Non-interactive |
+| `readonly` | Visible but not editable |
+
+**Support text types:**
+
+| Type Name | Purpose |
+|---|---|
+| `helper` | Persistent contextual hint |
+| `error` | Validation failure message |
+| `warning` | Cautionary notice |
+| `success` | Confirmation (transient) |
+
+### 5.5 Token Quick Reference
+
+For convenience, the tokens most commonly used in form and action control implementation:
+
+| Purpose | Token |
+|---|---|
+| Control background | `--color-neutral-surface` |
+| Control background (disabled/readonly) | `--color-neutral-canvas` |
+| Control border (rest) | `--color-border-edge` |
+| Control border (hover) | `--color-border-divider` |
+| Control border (focus) | `--color-border-focus` |
+| Focus ring | `0 0 0 2px --color-border-focus` |
+| Error border/text | `--color-semantic-error-foreground` |
+| Warning border/text | `--color-semantic-warning-foreground` |
+| Success border/text | `--color-semantic-success-foreground` |
+| Primary button background | `--color-accent-solid` |
+| Primary button hover | `--color-accent-solid-hover` |
+| Primary button text | `--color-text-inverse` |
+| Input/label text | `--color-text-primary` |
+| Helper/placeholder text | `--color-text-tertiary` |
+| Disabled text | `--color-text-disabled` |
+| Control radius | `--radii-md` |
+| Small control radius | `--radii-sm` |
+| Label-to-control spacing | `--spacing-xs` |
+| Field-to-field spacing | `--spacing-lg` |
+| Section gap | `--spacing-xl` |
+| Control internal padding | `--spacing-md` |
+| Button internal padding | `--spacing-lg` |
+| Button group gap | `--spacing-sm` |
+| State transitions | `--motion-duration-fast` / `--motion-easing-default` |
+
+---
+
+## Cross-References
+
+- [System Spec — Controls](system-spec.md#121-controls) — component-level behavioral principles for controls.
+- [System Spec — Inputs](system-spec.md#124-inputs) — input legibility and focus clarity expectations.
+- [Application Shell and Navigation — Page Header](application-shell-and-navigation.md#13-page-header) — page-level action placement.
+- [Application Shell and Navigation — Action Hierarchy](application-shell-and-navigation.md#32-page-level-vs-section-level-vs-background-actions) — action weight by placement context.
+- [Consumption Guide](consumption-guide.md) — how downstream products import and use design-system tokens.
