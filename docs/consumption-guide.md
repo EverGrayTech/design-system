@@ -18,7 +18,7 @@ Both files are generated from the same source tokens. They always agree.
 Add the design system as a dependency in your consuming repo:
 
 ```bash
-pnpm add @evergray/design-tokens
+pnpm add @evergraytech/design-system
 ```
 
 Or reference the built outputs directly if the package is linked or vendored locally.
@@ -83,7 +83,7 @@ When a consuming app needs a value that does not exist in the token set:
 When the design system is updated:
 
 1. The design system repo publishes a new version (semver).
-2. Consuming repos update their dependency: `pnpm update @evergray/design-tokens`
+2. Consuming repos update their dependency: `pnpm update @evergraytech/design-system`
 3. Rebuild if necessary — CSS variables and JSON are already updated through the dependency.
 4. Review the changelog for breaking changes (major version bumps) or new tokens.
 
@@ -100,7 +100,7 @@ Import the generated CSS variables file, then reference them in your stylesheets
 **Import:**
 
 ```css
-@import '@evergray/design-tokens/dist/css/variables.css';
+@import '@evergraytech/design-system/dist/css/variables.css';
 ```
 
 **Usage:**
@@ -136,7 +136,7 @@ Import the flat JSON export for programmatic use.
 **Import:**
 
 ```ts
-import tokens from '@evergray/design-tokens/dist/json/tokens.json';
+import tokens from '@evergraytech/design-system/dist/json/tokens.json';
 
 // Access values directly
 const canvasBg = tokens.ColorNeutralCanvas;     // "#121216"
@@ -152,7 +152,7 @@ For a Next.js app, import the CSS variables in your root layout so they're avail
 **`app/layout.tsx`:**
 
 ```tsx
-import '@evergray/design-tokens/dist/css/variables.css';
+import '@evergraytech/design-system/dist/css/variables.css';
 import './globals.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -179,7 +179,7 @@ body {
 **Server component with JSON tokens:**
 
 ```tsx
-import tokens from '@evergray/design-tokens/dist/json/tokens.json';
+import tokens from '@evergraytech/design-system/dist/json/tokens.json';
 
 export default function StatusBadge({ status }: { status: 'success' | 'error' }) {
   const color = status === 'success'
