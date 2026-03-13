@@ -42,13 +42,13 @@ Define shared design-system guidance for core form controls, action variants, an
 - [x] Ensure spacing guidance aligns with the shared system's premium technical character rather than generic consumer-SaaS softness
 
 ### 5. Examples and Naming Guidance
-- [ ] Add representative examples of common control states and validation scenarios
-- [ ] Provide recommended naming for shared action variants or semantic slots if doing so improves downstream consistency
-- [ ] Cross-link the guidance from broader design-system docs where appropriate
+- [x] Add representative examples of common control states and validation scenarios
+- [x] Provide recommended naming for shared action variants or semantic slots if doing so improves downstream consistency
+- [x] Cross-link the guidance from broader design-system docs where appropriate
 
 ## Acceptance Criteria
-- [ ] Consuming apps can style forms and actions consistently without local reinvention
-- [ ] Action hierarchy is visually and behaviorally coherent across products
-- [ ] Validation, helper text, and confirmation patterns are predictable and reusable
-- [ ] Control density guidance supports calm operational interfaces rather than cramped or oversized forms
-- [ ] The guidance clearly supports Plot Your Path plans 28 and 30 and future EverGray application forms
+- [x] Consuming apps can style forms and actions consistently without local reinvention
+- [x] Action hierarchy is visually and behaviorally coherent across products
+- [x] Validation, helper text, and confirmation patterns are predictable and reusable
+- [x] Control density guidance supports calm operational interfaces rather than cramped or oversized forms
+- [x] The guidance clearly supports Plot Your Path plans 28 and 30 and future EverGray application forms
