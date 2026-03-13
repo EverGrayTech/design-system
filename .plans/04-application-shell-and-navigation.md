@@ -22,33 +22,33 @@ Create shared design-system guidance for EverGray application shells and navigat
 ## Implementation Checklist
 
 ### 1. Shell Guidance Document
-- [ ] Create a dedicated application-shell guidance doc covering top app bars, side navigation, page headers, section headers, workspace containers, and utility areas such as settings/help/account
-- [ ] Clarify when each shell region should lead visually versus remain quiet and supportive
-- [ ] Define default containment and framing posture so workspaces feel structured without becoming heavy or card-like
+- [x] Create a dedicated application-shell guidance doc covering top app bars, side navigation, page headers, section headers, workspace containers, and utility areas such as settings/help/account
+- [x] Clarify when each shell region should lead visually versus remain quiet and supportive
+- [x] Define default containment and framing posture so workspaces feel structured without becoming heavy or card-like
 
 ### 2. Navigation-State Behavior
-- [ ] Document how navigation communicates current location, hover, focus, selected, and disabled states
-- [ ] Define how primary navigation should differ from secondary or utility navigation in emphasis and persistence
-- [ ] Include explicit guidance for quiet navigation that remains unmistakable without becoming loud
+- [x] Document how navigation communicates current location, hover, focus, selected, and disabled states
+- [x] Define how primary navigation should differ from secondary or utility navigation in emphasis and persistence
+- [x] Include explicit guidance for quiet navigation that remains unmistakable without becoming loud
 
 ### 3. Hierarchy Rules
-- [ ] Define how applications should separate primary workflows, supporting utilities, and low-frequency administrative controls
-- [ ] Clarify the relationship between page-level actions, section-level actions, and background utility controls
-- [ ] Capture dos/don'ts that prevent marketing-style emphasis from leaking into operational application shells
+- [x] Define how applications should separate primary workflows, supporting utilities, and low-frequency administrative controls
+- [x] Clarify the relationship between page-level actions, section-level actions, and background utility controls
+- [x] Capture dos/don'ts that prevent marketing-style emphasis from leaking into operational application shells
 
 ### 4. Responsive Posture
-- [ ] Document how shell patterns should compress, collapse, or reorganize on smaller viewports
-- [ ] Cover navigation regrouping, header simplification, and utility-area fallback behavior without prescribing exact product layouts
-- [ ] Ensure reduced-space patterns preserve orientation and action clarity
+- [x] Document how shell patterns should compress, collapse, or reorganize on smaller viewports
+- [x] Cover navigation regrouping, header simplification, and utility-area fallback behavior without prescribing exact product layouts
+- [x] Ensure reduced-space patterns preserve orientation and action clarity
 
 ### 5. Examples and Reference States
-- [ ] Add representative visual or annotated examples for active, hover, focus, disabled, and quiet navigation states
-- [ ] Include at least one example of a primary workspace shell and one lighter secondary shell pattern if both are supported
-- [ ] Cross-reference the guidance from any central documentation index or roadmap notes where appropriate
+- [x] Add representative visual or annotated examples for active, hover, focus, disabled, and quiet navigation states
+- [x] Include at least one example of a primary workspace shell and one lighter secondary shell pattern if both are supported
+- [x] Cross-reference the guidance from any central documentation index or roadmap notes where appropriate
 
 ## Acceptance Criteria
-- [ ] Downstream products can build a consistent application shell without inventing new visual rules
-- [ ] Navigation state behavior is documented clearly enough that it is no longer inferred ad hoc from tokens alone
-- [ ] Primary, secondary, and utility hierarchy is reusable across EverGray applications
-- [ ] Responsive shell guidance preserves operational clarity without turning into product-specific IA rules
-- [ ] The guidance clearly supports Plot Your Path plan 29 and future EverGray application shells
+- [x] Downstream products can build a consistent application shell without inventing new visual rules
+- [x] Navigation state behavior is documented clearly enough that it is no longer inferred ad hoc from tokens alone
+- [x] Primary, secondary, and utility hierarchy is reusable across EverGray applications
+- [x] Responsive shell guidance preserves operational clarity without turning into product-specific IA rules
+- [x] The guidance clearly supports Plot Your Path plan 29 and future EverGray application shells
