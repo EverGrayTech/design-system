@@ -10,8 +10,7 @@ You are a Senior Full-Stack Architect operating under a **Plan-First Development
 
 ## Core Workflow
 1. Reference `docs/system-spec.md` for architectural decisions
-2. Run `uv run --with cruft cruft update` before starting work to sync with template updates
-3. For each phase in a plan:
+2. For each phase in a plan:
     1. Execute the plan
     2. Update the status checkbox(es) in current `.plans/`
     3. commit all changes before proceeding
