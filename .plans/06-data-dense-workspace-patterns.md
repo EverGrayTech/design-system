@@ -42,13 +42,13 @@ Define shared design-system guidance for lists, table-like layouts, row summarie
 - [x] Address how selectable rows and embedded actions should coexist without ambiguous affordances
 
 ### 5. Examples and Comparison Guidance
-- [ ] Add representative examples of list-row hierarchy, separator behavior, and selectable data-row states
-- [ ] Include guidance for comparing multiple records or metadata groups side by side when relevant
-- [ ] Cross-reference related status-signal guidance if compact indicators are used within dense surfaces
+- [x] Add representative examples of list-row hierarchy, separator behavior, and selectable data-row states
+- [x] Include guidance for comparing multiple records or metadata groups side by side when relevant
+- [x] Cross-reference related status-signal guidance if compact indicators are used within dense surfaces
 
 ## Acceptance Criteria
-- [ ] Consuming apps can build dense operational surfaces that feel consistent, readable, and premium
-- [ ] Record-list hierarchy is easier to standardize across products
-- [ ] Dense views remain calm and scan-friendly rather than cluttered or generic
-- [ ] Interaction-state guidance is clear enough for selectable rows and inline actions to behave consistently
-- [ ] The guidance clearly supports Plot Your Path plan 30 and future EverGray workflow-heavy tools
+- [x] Consuming apps can build dense operational surfaces that feel consistent, readable, and premium
+- [x] Record-list hierarchy is easier to standardize across products
+- [x] Dense views remain calm and scan-friendly rather than cluttered or generic
+- [x] Interaction-state guidance is clear enough for selectable rows and inline actions to behave consistently
+- [x] The guidance clearly supports Plot Your Path plan 30 and future EverGray workflow-heavy tools

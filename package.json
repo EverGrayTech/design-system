@@ -1,6 +1,6 @@
 {
   "name": "@evergray/design-tokens",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Design tokens for the EverGray Tech visual system",
   "private": true,
   "type": "module",
