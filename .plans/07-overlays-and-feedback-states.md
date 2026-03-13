@@ -32,14 +32,14 @@ Define shared design-system guidance for overlays, modal workflows, and common f
 - [x] Clarify where semantic color should lead and where typography, spacing, or structure should do more of the work
 
 ### 3. Tone and Prominence Rules
-- [ ] Define how visibility, semantic clarity, and restrained visual language should balance across different feedback intensities
-- [ ] Document how applications should avoid alarmist or celebratory treatments that conflict with the system's operational posture
-- [ ] Ensure feedback states remain usable in extended dark-theme sessions
+- [x] Define how visibility, semantic clarity, and restrained visual language should balance across different feedback intensities
+- [x] Document how applications should avoid alarmist or celebratory treatments that conflict with the system's operational posture
+- [x] Ensure feedback states remain usable in extended dark-theme sessions
 
 ### 4. Structured Message Anatomy
-- [ ] Provide a recommended message structure covering title, supporting explanation, recovery guidance, and follow-up action when applicable
-- [ ] Clarify when short inline messages are sufficient versus when fuller recovery guidance is appropriate
-- [ ] Define how message anatomy should scale across inline, panel, and modal contexts
+- [x] Provide a recommended message structure covering title, supporting explanation, recovery guidance, and follow-up action when applicable
+- [x] Clarify when short inline messages are sufficient versus when fuller recovery guidance is appropriate
+- [x] Define how message anatomy should scale across inline, panel, and modal contexts
 
 ### 5. Examples and Decision Guidance
 - [ ] Add representative state examples for empty/loading/success/error treatments and modal hierarchy
