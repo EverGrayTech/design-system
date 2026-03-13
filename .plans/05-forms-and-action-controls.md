@@ -37,9 +37,9 @@ Define shared design-system guidance for core form controls, action variants, an
 - [x] Clarify placement and tone expectations for recovery guidance and short confirmation messaging
 
 ### 4. Density and Spacing Posture
-- [ ] Define how control sizing and spacing should support operational efficiency without feeling cramped
-- [ ] Cover grouped controls, stacked forms, and inline action clusters
-- [ ] Ensure spacing guidance aligns with the shared system's premium technical character rather than generic consumer-SaaS softness
+- [x] Define how control sizing and spacing should support operational efficiency without feeling cramped
+- [x] Cover grouped controls, stacked forms, and inline action clusters
+- [x] Ensure spacing guidance aligns with the shared system's premium technical character rather than generic consumer-SaaS softness
 
 ### 5. Examples and Naming Guidance
 - [ ] Add representative examples of common control states and validation scenarios

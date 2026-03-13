@@ -466,3 +466,104 @@ When multiple types of support text could apply to a single control, the followi
 Only one support message is visible per control at a time. They do not stack vertically.
 
 ---
+
+## 4. Density and Spacing Posture
+
+EverGray applications serve workflow-oriented users who value efficiency. Form density must support speed and scanning without making the interface feel cramped, rushed, or generic. The goal is a premium technical character: controlled, measured, and calm — not consumer-SaaS soft, not enterprise-legacy dense.
+
+### 4.1 Control Sizing Tiers
+
+The system supports two sizing tiers. Products should choose a default tier and use it consistently, switching tiers only when context demands it.
+
+| Tier | Height (single-line) | Use Case |
+|---|---|---|
+| **Default** | `36px`–`40px` | Standard forms, settings pages, dialog forms, page-level inputs |
+| **Compact** | `32px` | Toolbars, table-inline controls, filter bars, dense action clusters |
+
+- Do not mix tiers arbitrarily within the same form. If a form uses default sizing, all its controls should be default.
+- Compact tier is appropriate when controls are embedded in a data-dense context (e.g., inline table editing, filter bars above a list) where the surrounding content already establishes a tighter density.
+- Do not go below `32px` for any interactive control. Controls smaller than this compromise click targets and readability on the dark theme.
+
+### 4.2 Vertical Spacing in Stacked Forms
+
+Stacked forms (the most common layout) place fields in a vertical sequence. Spacing between fields creates grouping, rhythm, and breathing room.
+
+**Between individual fields (label + control + support text as one unit):**
+- Standard gap: `--spacing-lg` (`16px`).
+- This provides clear separation between fields without creating excessive whitespace.
+
+**Between field groups (related fields under a section header):**
+- Gap before a section header: `--spacing-xl` (`24px`).
+- Gap after a section header (before the first field): `--spacing-md` (`12px`).
+- This creates a visible grouping boundary that is reinforced by Section Header guidance (see [Application Shell and Navigation](application-shell-and-navigation.md), Section 1.4).
+
+**Between the last field and the action group:**
+- Gap: `--spacing-xl` (`24px`). The action group should feel clearly separated from the form content — it is a conclusion, not another field.
+
+### 4.3 Horizontal Spacing
+
+**Internal control padding:**
+- Horizontal padding inside text inputs, selects, and textareas: `--spacing-md` (`12px`).
+- This provides comfortable breathing room for value text without making the control feel oversized.
+
+**Button internal padding:**
+- Horizontal padding: `--spacing-lg` (`16px`) minimum. Buttons should feel substantial but not bloated.
+- Compact buttons (in toolbars): `--spacing-md` (`12px`) horizontal padding.
+
+**Gap between adjacent buttons (action groups):**
+- `--spacing-sm` (`8px`) between buttons in the same action group.
+- This keeps the group visually cohesive without the buttons touching or feeling crowded.
+
+### 4.4 Inline Field Clusters
+
+Some workflows place multiple controls on a single row — date ranges, coordinate pairs, compound filters.
+
+**Rules:**
+- Gap between inline controls: `--spacing-md` (`12px`).
+- All controls in an inline cluster should share the same height tier.
+- Labels remain above each control, even in inline layouts. Do not remove labels to save horizontal space.
+- If the inline cluster includes a connecting element (e.g., "to" between date fields, "×" between dimensions), render it as static text at `--color-text-tertiary`, vertically centered with the controls, with `--spacing-sm` on each side.
+- Inline clusters must collapse to stacked layout on narrow viewports. The breakpoint is a product-level decision, but the design system requires that inline controls never overflow their container.
+
+### 4.5 Grouped Controls: Checkbox and Radio Lists
+
+Checkbox groups and radio groups have their own density rhythm.
+
+**Within a group:**
+- Vertical gap between options: `--spacing-sm` (`8px`).
+- This keeps the group compact and scannable.
+
+**Between the group label and the first option:**
+- Gap: `--spacing-xs` (`4px`).
+
+**Between a checkbox/radio group and the next field:**
+- Use the standard `--spacing-lg` (`16px`) gap, same as any other field-to-field spacing.
+
+### 4.6 Action Clusters in Toolbars and Inline Contexts
+
+When multiple icon-only buttons or compact buttons appear in a row (toolbars, table action columns, card footers):
+
+- Gap between icon-only buttons: `--spacing-xs` (`4px`).
+- Gap between compact text buttons: `--spacing-sm` (`8px`).
+- Toolbar padding: `--spacing-sm` (`8px`) vertical, `--spacing-md` (`12px`) horizontal.
+- Separate logical groups within a toolbar with `--spacing-md` (`12px`) or a faint `--color-border-divider` vertical separator.
+
+### 4.7 Form Width and Containment
+
+Forms should have a sensible maximum width so lines of text remain readable and controls do not stretch to unreasonable widths.
+
+- **Recommendation:** Maximum form width of `560px`–`640px` for standard single-column forms.
+- **Settings panels and narrow contexts:** `400px`–`480px`.
+- **Full-width contexts** (e.g., a form embedded in a wide workspace): Constrain individual controls to a `max-width` even if the container is wider. Text inputs wider than `~480px` become harder to scan.
+- Multi-column form layouts (two fields side by side) may use up to `~800px` total width.
+
+These are recommendations, not hard constraints. Products may adjust based on content, but the principle is: controls should feel contained and controlled, not stretched to fill available space.
+
+### 4.8 What to Avoid
+
+- **Do not** use `--spacing-2xs` (`2px`) between form elements. This creates a cramped, aggressive density that undermines the system's calm character.
+- **Do not** use `--spacing-2xl` (`32px`) or larger between fields in an application form. This creates a marketing-site airiness that wastes space and slows scanning in workflow contexts.
+- **Do not** add decorative padding, oversized section dividers, or card wrappers around individual fields. Each field is already a distinct unit through its label, control, and support text — additional visual chrome is unnecessary.
+- **Do not** mix compact and default controls in the same form without a clear contextual reason (e.g., a compact filter bar above a default-sized creation form).
+
+---
