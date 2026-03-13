@@ -1,11 +1,22 @@
 {
-  "name": "@evergray/design-tokens",
-  "version": "0.7.0",
+  "name": "@evergraytech/design-system",
+  "version": "0.1.0",
   "description": "Design tokens for the EverGray Tech visual system",
-  "private": true,
+  "license": "Apache-2.0",
   "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EverGrayTech/design-system.git"
+  },
   "scripts": {
-    "build": "style-dictionary build --config style-dictionary.config.js",
+    "build": "style-dictionary build --config style-dictionary.config.js && cp assets/* dist/",
     "clean": "rm -rf dist"
   },
   "devDependencies": {

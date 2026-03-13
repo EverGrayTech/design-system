@@ -3,7 +3,7 @@ export default {
   platforms: {
     css: {
       transformGroup: "css",
-      buildPath: "dist/css/",
+      buildPath: "dist/",
       files: [
         {
           destination: "variables.css",
@@ -16,7 +16,7 @@ export default {
     },
     json: {
       transformGroup: "js",
-      buildPath: "dist/json/",
+      buildPath: "dist/",
       files: [
         {
           destination: "tokens.json",
