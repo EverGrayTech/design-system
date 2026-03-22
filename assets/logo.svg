@@ -14,8 +14,10 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+
   <title id="logo-title">EverGray Tech Logo</title>
-  <desc id="logo-desc">A stylized letter 'e' and 'g' forming the EverGray Tech brand mark, rendered in a gradient from burgundy to navy to blue</desc>
+  <desc id="logo-desc">A stylized letter 'E' and 'G' forming the EverGray Tech brand mark, rendered in a gradient from burgundy to navy to blue</desc>
+
   <metadata>
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -28,16 +30,12 @@
       </rdf:Description>
    </rdf:RDF>
   </metadata>
-  <sodipodi:namedview
-     id="namedview3"
-     pagecolor="#505050"
-     bordercolor="#eeeeee"
-     borderopacity="1" />
+
   <defs>
     <linearGradient id="GradientColor">
-      <stop offset="0%" style="stop-color:#A21534;"/>
-      <stop offset="50%" style="stop-color:#0F263D;" />
-      <stop offset="100%" style="stop-color:#3A7ABB;" />
+      <stop offset="0%" stop-color="#A21534"/>
+      <stop offset="50%" stop-color="#0F263D" />
+      <stop offset="100%" stop-color="#3A7ABB" />
     </linearGradient>
     <linearGradient
        xlink:href="#GradientColor"
@@ -51,6 +49,7 @@
        gradientTransform="translate(0,0)"
    />
    </defs>     
+
    <g fill="url(#GradientPosition)" stroke="none">
       <path
          id="e"
