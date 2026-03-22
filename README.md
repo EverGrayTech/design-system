@@ -83,12 +83,15 @@ This generates consumable token outputs under `dist/`:
 
 | Output | Path | Format |
 |---|---|---|
+| React logo export | `dist/index.js` | ESM component entrypoint with TypeScript declarations |
 | CSS custom properties | `dist/variables.css` | `:root` block with `--`-prefixed variables |
 | JSON flat export | `dist/tokens.json` | PascalCase key → value pairs |
 | Static Assets | `dist/*.svg` | Scalable vector graphics for apps and websites |
 
 Source tokens live in `tokens/` — see [tokens/README.md](tokens/README.md) for the structure and design rationale.
 Static brand assets (such as the logo) live in `assets/` and are copied into `dist/` during the build.
+
+The package also exports a reusable `EverGrayTechLogo` React component from the package root for application-safe integration in React and Next.js environments.
 
 ### Clean
 

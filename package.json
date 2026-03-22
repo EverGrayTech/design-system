@@ -4,6 +4,17 @@
   "description": "Design tokens for the EverGray Tech visual system",
   "license": "Apache-2.0",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./dist/logo.svg": "./dist/logo.svg",
+    "./dist/variables.css": "./dist/variables.css",
+    "./dist/tokens.json": "./dist/tokens.json"
+  },
   "files": [
     "dist",
     "README.md"
@@ -16,10 +27,14 @@
     "url": "git+https://github.com/EverGrayTech/design-system.git"
   },
   "scripts": {
-    "build": "style-dictionary build --config style-dictionary.config.js && cp assets/* dist/",
-    "clean": "rm -rf dist"
+    "build": "style-dictionary build --config style-dictionary.config.js && tsc -p tsconfig.json && node -e \"const fs=require('fs');fs.mkdirSync('dist',{recursive:true});for(const file of fs.readdirSync('assets'))fs.copyFileSync('assets/'+file,'dist/'+file);\"",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "test": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {
-    "style-dictionary": "^4"
+    "@types/react": "^19.1.2",
+    "react": "^19.1.0",
+    "style-dictionary": "^4",
+    "typescript": "^5.8.2"
   }
 }

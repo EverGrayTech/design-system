@@ -10,10 +10,12 @@ The design system generates outputs under `dist/`:
 |---|---|---|
 | CSS custom properties | `dist/variables.css` | Styling with CSS or any CSS-in-JS that supports custom properties |
 | JSON flat export | `dist/tokens.json` | Programmatic access in JS/TS (e.g., theming logic, style objects, SSR) |
-| Brand logo (SVG) | `dist/logo.svg` | Rendering the EverGray Tech logo in apps or websites |
+| Logo component | package root export | Rendering the EverGray Tech logo in React / Next.js applications |
+| Brand logo (SVG) | `dist/logo.svg` | Referencing the raw logo asset when a direct file URL is explicitly needed |
 
 CSS and JSON files are generated from the same source tokens. They always agree.  
 Static assets (such as the logo) are copied into the package during the build process.
+The React logo component is a supported package export and should be the default integration path for application shells.
 
 ### Installation
 
@@ -201,3 +203,37 @@ export default function StatusBadge({ status }: { status: 'success' | 'error' })
 ```
 
 > **Note:** CSS variables are generally preferred over JSON for styling. Use JSON tokens when you need values in logic, computed styles, or SSR contexts where CSS variables aren't available.
+
+### EverGray Tech Logo for React and Next.js
+
+For React and Next.js application shells, prefer the typed component export:
+
+```tsx
+import { EverGrayTechLogo } from '@evergraytech/design-system';
+
+export function ShellBrand() {
+  return (
+    <a href="https://evergraytech.com" aria-label="EverGray Tech home">
+      <EverGrayTechLogo className="shell-logo" width={20} height={20} aria-hidden />
+    </a>
+  );
+}
+```
+
+Use a labeled logo when the mark itself needs to carry the accessible name:
+
+```tsx
+import { EverGrayTechLogo } from '@evergraytech/design-system';
+
+export function BrandBadge() {
+  return <EverGrayTechLogo width={24} height={24} title="EverGray Tech" />;
+}
+```
+
+Accessibility guidance:
+
+- Use `aria-hidden` when nearby text or link labeling already identifies EverGray Tech.
+- Use `title` or `aria-label` when the logo must provide its own accessible name.
+- Avoid duplicating accessible text when the consuming shell already labels the link or region.
+
+Use the raw asset at `@evergraytech/design-system/dist/logo.svg` only when a framework truly needs a file reference rather than a reusable component. The component export is the canonical product-facing integration method.
