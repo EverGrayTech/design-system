@@ -1,8 +1,8 @@
 # Marketing Site Composition and CTA Patterns Guidance
 
-This document defines shared design-system guidance for EverGray marketing-site composition, recurring public-facing section structures, and CTA hierarchy. It enables `evergraytech.com` and future brand surfaces to build consistent pages without inventing a parallel local visual grammar.
+This document defines shared design-system guidance for EverGray Tech marketing-site composition, recurring public-facing section structures, and CTA hierarchy. It enables `evergraytech.com` and future brand surfaces to build consistent pages without inventing a parallel local visual grammar.
 
-This guidance follows the shared posture defined in [System Spec](system-spec.md): the website is the slightly more cinematic expression of the system, but it remains typography-led, structure-first, and restrained. Marketing pages may feel more spacious and atmospheric than applications, yet they must still read as EverGray — precise, technical, calm, and premium through control rather than spectacle.
+This guidance follows the shared posture defined in [System Spec](system-spec.md): the website is the slightly more cinematic expression of the system, but it remains typography-led, structure-first, and restrained. Marketing pages may feel more spacious and atmospheric than applications, yet they must still read as EverGray Tech — precise, technical, calm, and premium through control rather than spectacle.
 
 ---
 
@@ -12,10 +12,10 @@ Marketing pages should be assembled from recurring section types with clear role
 
 ### 1.1 Core Section Types
 
-An EverGray marketing page will usually draw from the following section types:
+An EverGray Tech marketing page will usually draw from the following section types:
 
 1. **Hero section** — the page's highest-emphasis entry point.
-2. **Intro or value section** — clarifies what EverGray does and why it matters.
+2. **Intro or value section** — clarifies what EverGray Tech does and why it matters.
 3. **Capability or service group** — organizes offerings, competencies, or product pillars.
 4. **Proof section** — credibility, leadership, evidence, technical depth, or operational trust.
 5. **CTA section** — focused conversion or next-step framing.
@@ -501,7 +501,7 @@ These examples describe the intended structure of common marketing patterns. The
 ```
 ┌────────────────────────────────────────────────────────────────────┐
 │ Proof kicker                                                       │
-│ Why teams trust EverGray                                           │
+│ Why teams trust EverGray Tech                                           │
 │                                                                    │
 │  Proof item / quote / metric      Supporting explanation           │
 │  Proof item / quote / metric      Supporting explanation           │
@@ -518,7 +518,7 @@ These examples describe the intended structure of common marketing patterns. The
 ```
 ┌────────────────────────────────────────────────────────────────────┐
 │ Capabilities                                                       │
-│ What EverGray can design, build, or operationalize                 │
+│ What EverGray Tech can design, build, or operationalize                 │
 │                                                                    │
 │  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐        │
 │  │ Capability A   │  │ Capability B   │  │ Capability C   │        │

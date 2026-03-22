@@ -1,6 +1,6 @@
 # Overlays and Feedback States Guidance
 
-This document defines shared design-system guidance for overlays, modal workflows, and common feedback states in EverGray applications. It enables products to present interruptions, empty states, loading, progress, success, warning, and error messaging with a consistent dark-theme language that stays calm, legible, and structurally clear.
+This document defines shared design-system guidance for overlays, modal workflows, and common feedback states in EverGray Tech applications. It enables products to present interruptions, empty states, loading, progress, success, warning, and error messaging with a consistent dark-theme language that stays calm, legible, and structurally clear.
 
 This guidance follows the application expression defined in [System Spec](system-spec.md): quiet, operational, precise, and restrained. Overlays should feel machined and layered — never glassy, glowing, or decorative. Feedback should communicate clearly without becoming alarmist or celebratory.
 
@@ -12,7 +12,7 @@ Overlays are elevated surfaces that appear above the workspace to capture focuse
 
 ### 1.1 Overlay Types
 
-EverGray applications use three overlay patterns, distinguished by their purpose and visual weight.
+EverGray Tech applications use three overlay patterns, distinguished by their purpose and visual weight.
 
 #### Modal Dialog
 

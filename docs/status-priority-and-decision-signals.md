@@ -1,6 +1,6 @@
 # Status, Priority, and Decision Signals Guidance
 
-This document defines shared design-system guidance for compact status, priority, urgency, and decision-support signals in EverGray applications. It enables workflow-heavy products to represent operational state consistently, accessibly, and without relying on noisy or color-only treatments.
+This document defines shared design-system guidance for compact status, priority, urgency, and decision-support signals in EverGray Tech applications. It enables workflow-heavy products to represent operational state consistently, accessibly, and without relying on noisy or color-only treatments.
 
 This guidance follows the application expression defined in [System Spec](system-spec.md): quiet, operational, precise, and restrained. Status signals should be clear at a glance — never dominant, alarmist, or decorative.
 
@@ -8,7 +8,7 @@ This guidance follows the application expression defined in [System Spec](system
 
 ## 1. Compact Signal Patterns
 
-EverGray applications frequently display status, priority, and category information alongside records, tasks, and workflow items. These compact signals must communicate state efficiently across dense surfaces without overwhelming the content they annotate.
+EverGray Tech applications frequently display status, priority, and category information alongside records, tasks, and workflow items. These compact signals must communicate state efficiently across dense surfaces without overwhelming the content they annotate.
 
 ### 1.1 Supported Pattern Types
 

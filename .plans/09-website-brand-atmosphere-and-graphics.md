@@ -1,7 +1,7 @@
 # Plan: Website Brand Atmosphere, Graphics, and Motion Restraint Guidance
 
 ## Objective
-Create shared design-system guidance for website-only atmospheric brand treatments, graphic motifs, and restrained marketing motion so EverGray web properties can feel cinematic within the system's boundaries without drifting into glow-heavy, glassy, or overly decorative styling.
+Create shared design-system guidance for website-only atmospheric brand treatments, graphic motifs, and restrained marketing motion so EverGray Tech web properties can feel cinematic within the system's boundaries without drifting into glow-heavy, glassy, or overly decorative styling.
 
 ## Customer Value
 - Gives `evergraytech.com` and future brand surfaces a reusable atmospheric language that still feels recognizably EverGray
@@ -54,6 +54,6 @@ Create shared design-system guidance for website-only atmospheric brand treatmen
 ## Acceptance Criteria
 - [x] Downstream websites can create branded atmospheric treatments without resorting to local invention
 - [x] Gradient, glow, and motion usage become consistent with the design system's restraint principles
-- [x] Supporting graphics feel clearly part of the EverGray visual language
+- [x] Supporting graphics feel clearly part of the EverGray Tech visual language
 - [x] Website atmosphere strengthens brand expression without compromising clarity, structure, or accessibility
-- [x] The guidance clearly supports `evergraytech.com` visual realignment work and future EverGray brand surfaces
+- [x] The guidance clearly supports `evergraytech.com` visual realignment work and future EverGray Tech brand surfaces

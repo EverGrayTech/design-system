@@ -1,7 +1,7 @@
 # Plan: Overlays and Feedback States Guidance
 
 ## Objective
-Define shared design-system guidance for overlays, modal workflows, and common feedback states so EverGray applications can present interruptions, empty states, loading, progress, success, warning, and error messaging with a consistent dark-theme language that stays calm, legible, and structurally clear.
+Define shared design-system guidance for overlays, modal workflows, and common feedback states so EverGray Tech applications can present interruptions, empty states, loading, progress, success, warning, and error messaging with a consistent dark-theme language that stays calm, legible, and structurally clear.
 
 ## Customer Value
 - Gives Plot Your Path and future products a reusable approach to transient workflows and system feedback
@@ -51,4 +51,4 @@ Define shared design-system guidance for overlays, modal workflows, and common f
 - [x] Feedback patterns feel calm, legible, and semantically clear in dark-theme products
 - [x] Empty and error states no longer require product teams to invent their own visual language from scratch
 - [x] Overlay structure, layering, and motion remain aligned with the system's machined and restrained posture
-- [x] The guidance clearly supports Plot Your Path plans 28, 30, and 32 and future EverGray applications
+- [x] The guidance clearly supports Plot Your Path plans 28, 30, and 32 and future EverGray Tech applications

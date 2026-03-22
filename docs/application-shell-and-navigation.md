@@ -1,6 +1,6 @@
 # Application Shell and Navigation Guidance
 
-This document defines the shared design-system guidance for EverGray application shells and navigation patterns. It enables operational products to build consistent workspace framing, navigation hierarchy, and state behavior without inventing local visual rules.
+This document defines the shared design-system guidance for EverGray Tech application shells and navigation patterns. It enables operational products to build consistent workspace framing, navigation hierarchy, and state behavior without inventing local visual rules.
 
 This guidance follows the application expression defined in [System Spec](system-spec.md): quiet, operational, precise, and restrained. Applications should feel operational first and branded second.
 
@@ -8,7 +8,7 @@ This guidance follows the application expression defined in [System Spec](system
 
 ## 1. Shell Regions
 
-An EverGray application shell is composed of distinct structural regions. Each region has a defined role, visual weight, and token mapping. Products may omit regions that are not relevant, but any region that is present must follow the guidance here.
+An EverGray Tech application shell is composed of distinct structural regions. Each region has a defined role, visual weight, and token mapping. Products may omit regions that are not relevant, but any region that is present must follow the guidance here.
 
 ### 1.1 Top App Bar
 
@@ -127,7 +127,7 @@ Navigation must communicate the user's current location and available interactio
 
 ### 2.3 Quiet But Unmistakable
 
-Navigation in EverGray applications must follow the system's core principle: _quiet but unmistakable_.
+Navigation in EverGray Tech applications must follow the system's core principle: _quiet but unmistakable_.
 
 - **Do:** Use tonal background shifts, weight changes, and a restrained accent indicator to communicate state.
 - **Do:** Ensure the selected item is immediately identifiable at a glance without scanning.
@@ -142,7 +142,7 @@ Navigation in EverGray applications must follow the system's core principle: _qu
 
 ### 3.1 Three-Tier Action Hierarchy
 
-EverGray applications should organize controls into three tiers:
+EverGray Tech applications should organize controls into three tiers:
 
 **Tier 1 — Primary workflows**
 The core reason the user is in the application. These are the main sections visible in primary navigation.
@@ -186,7 +186,7 @@ Settings, account management, help, legal, logout.
 
 ## 4. Responsive Posture
 
-EverGray products define their own breakpoints, but shell patterns must follow consistent principles when adapting to smaller viewports. The goal is always to preserve orientation and action clarity.
+EverGray Tech products define their own breakpoints, but shell patterns must follow consistent principles when adapting to smaller viewports. The goal is always to preserve orientation and action clarity.
 
 ### 4.1 Side Navigation Collapse
 
@@ -270,7 +270,7 @@ The following describes the visual treatment for a typical side-navigation item 
 
 ### 5.2 Primary Workspace Shell
 
-The standard shell layout for a workflow application. This is the default pattern for EverGray products.
+The standard shell layout for a workflow application. This is the default pattern for EverGray Tech products.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

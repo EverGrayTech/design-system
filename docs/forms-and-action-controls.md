@@ -1,6 +1,6 @@
 # Forms and Action Controls Guidance
 
-This document defines the shared design-system guidance for form controls, action variants, and supporting form text in EverGray applications. It enables operational products to build consistent, calm, and precise workflow-heavy forms without inventing local visual rules.
+This document defines the shared design-system guidance for form controls, action variants, and supporting form text in EverGray Tech applications. It enables operational products to build consistent, calm, and precise workflow-heavy forms without inventing local visual rules.
 
 This guidance follows the application expression defined in [System Spec](system-spec.md): quiet, operational, precise, and restrained. Forms should feel reliable and efficient — never decorative, inflated, or playful.
 
@@ -8,11 +8,11 @@ This guidance follows the application expression defined in [System Spec](system
 
 ## 1. Core Control Patterns
 
-EverGray applications rely on a small set of foundational controls that appear across nearly every workflow. Each control follows the same visual philosophy: understated shells, clear focus states, legible content, and precise edge treatment.
+EverGray Tech applications rely on a small set of foundational controls that appear across nearly every workflow. Each control follows the same visual philosophy: understated shells, clear focus states, legible content, and precise edge treatment.
 
 ### 1.1 Foundational vs. Optional Controls
 
-**Foundational controls** — expected in every EverGray application. The guidance in this document fully defines their structure, states, and behavior:
+**Foundational controls** — expected in every EverGray Tech application. The guidance in this document fully defines their structure, states, and behavior:
 
 - Text input
 - Textarea
@@ -191,11 +191,11 @@ Icon-only buttons provide compact actions where a text label would create unnece
 
 ## 2. Action Hierarchy
 
-Buttons are the primary mechanism through which users commit decisions, trigger workflows, and navigate between states. EverGray applications must present a clear, predictable action hierarchy so users can instantly distinguish the most important action from supporting alternatives.
+Buttons are the primary mechanism through which users commit decisions, trigger workflows, and navigate between states. EverGray Tech applications must present a clear, predictable action hierarchy so users can instantly distinguish the most important action from supporting alternatives.
 
 ### 2.1 Action Variants
 
-Every button in an EverGray application maps to one of the following semantic variants. Products must not invent additional emphasis levels.
+Every button in an EverGray Tech application maps to one of the following semantic variants. Products must not invent additional emphasis levels.
 
 #### Primary
 
@@ -469,7 +469,7 @@ Only one support message is visible per control at a time. They do not stack ver
 
 ## 4. Density and Spacing Posture
 
-EverGray applications serve workflow-oriented users who value efficiency. Form density must support speed and scanning without making the interface feel cramped, rushed, or generic. The goal is a premium technical character: controlled, measured, and calm — not consumer-SaaS soft, not enterprise-legacy dense.
+EverGray Tech applications serve workflow-oriented users who value efficiency. Form density must support speed and scanning without making the interface feel cramped, rushed, or generic. The goal is a premium technical character: controlled, measured, and calm — not consumer-SaaS soft, not enterprise-legacy dense.
 
 ### 4.1 Control Sizing Tiers
 

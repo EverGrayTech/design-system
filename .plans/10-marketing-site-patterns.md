@@ -1,7 +1,7 @@
 # Plan: Marketing Site Composition and CTA Patterns Guidance
 
 ## Objective
-Define shared design-system guidance for marketing-site composition, section structure, and CTA hierarchy so EverGray web properties can build public-facing pages with a consistent, slightly more cinematic expression that still clearly belongs to the same system as the applications.
+Define shared design-system guidance for marketing-site composition, section structure, and CTA hierarchy so EverGray Tech web properties can build public-facing pages with a consistent, slightly more cinematic expression that still clearly belongs to the same system as the applications.
 
 ## Customer Value
 - Gives `evergraytech.com` and future marketing properties reusable composition rules instead of a parallel local visual grammar
@@ -55,5 +55,5 @@ Define shared design-system guidance for marketing-site composition, section str
 - [x] Downstream marketing sites can compose key sections without inventing a parallel local visual grammar
 - [x] CTA hierarchy is clearer and more reusable across marketing surfaces
 - [x] The website's “slightly more cinematic” expression becomes concrete enough to implement consistently
-- [x] Marketing layouts remain recognizably part of the same system as EverGray applications
-- [x] The guidance clearly supports `evergraytech.com` adoption work and future EverGray marketing pages
+- [x] Marketing layouts remain recognizably part of the same system as EverGray Tech applications
+- [x] The guidance clearly supports `evergraytech.com` adoption work and future EverGray Tech marketing pages

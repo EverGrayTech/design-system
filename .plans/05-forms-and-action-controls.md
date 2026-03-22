@@ -1,7 +1,7 @@
 # Plan: Forms and Action Controls Guidance
 
 ## Objective
-Define shared design-system guidance for core form controls, action variants, and supporting form text so EverGray applications can present workflow-heavy forms with a consistent, calm, and operational interaction language.
+Define shared design-system guidance for core form controls, action variants, and supporting form text so EverGray Tech applications can present workflow-heavy forms with a consistent, calm, and operational interaction language.
 
 ## Customer Value
 - Gives Plot Your Path and future products a reusable baseline for common inputs and actions
@@ -51,4 +51,4 @@ Define shared design-system guidance for core form controls, action variants, an
 - [x] Action hierarchy is visually and behaviorally coherent across products
 - [x] Validation, helper text, and confirmation patterns are predictable and reusable
 - [x] Control density guidance supports calm operational interfaces rather than cramped or oversized forms
-- [x] The guidance clearly supports Plot Your Path plans 28 and 30 and future EverGray application forms
+- [x] The guidance clearly supports Plot Your Path plans 28 and 30 and future EverGray Tech application forms

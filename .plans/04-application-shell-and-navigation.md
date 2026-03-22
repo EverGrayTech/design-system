@@ -1,10 +1,10 @@
 # Plan: Application Shell and Navigation Guidance
 
 ## Objective
-Create shared design-system guidance for EverGray application shells and navigation patterns so operational products can build consistent workspace framing, navigation hierarchy, and state behavior without inventing local visual rules.
+Create shared design-system guidance for EverGray Tech application shells and navigation patterns so operational products can build consistent workspace framing, navigation hierarchy, and state behavior without inventing local visual rules.
 
 ## Customer Value
-- Gives Plot Your Path and future EverGray applications a reusable shell posture aligned with the canonical system
+- Gives Plot Your Path and future EverGray Tech applications a reusable shell posture aligned with the canonical system
 - Reduces UX drift around navigation placement, page framing, and action hierarchy across products
 - Makes responsive application-shell decisions more consistent even when exact breakpoints remain product-specific
 
@@ -49,6 +49,6 @@ Create shared design-system guidance for EverGray application shells and navigat
 ## Acceptance Criteria
 - [x] Downstream products can build a consistent application shell without inventing new visual rules
 - [x] Navigation state behavior is documented clearly enough that it is no longer inferred ad hoc from tokens alone
-- [x] Primary, secondary, and utility hierarchy is reusable across EverGray applications
+- [x] Primary, secondary, and utility hierarchy is reusable across EverGray Tech applications
 - [x] Responsive shell guidance preserves operational clarity without turning into product-specific IA rules
-- [x] The guidance clearly supports Plot Your Path plan 29 and future EverGray application shells
+- [x] The guidance clearly supports Plot Your Path plan 29 and future EverGray Tech application shells

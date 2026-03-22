@@ -1,6 +1,6 @@
 # Data-Dense Workspace Patterns Guidance
 
-This document defines shared design-system guidance for lists, table-like layouts, row summaries, grouped metadata, and other data-dense workspace surfaces in EverGray applications. It enables operational products to present dense information with consistent hierarchy, calm density, and precise interaction states.
+This document defines shared design-system guidance for lists, table-like layouts, row summaries, grouped metadata, and other data-dense workspace surfaces in EverGray Tech applications. It enables operational products to present dense information with consistent hierarchy, calm density, and precise interaction states.
 
 This guidance follows the application expression defined in [System Spec](system-spec.md): quiet, operational, precise, and restrained. Dense surfaces should feel efficient and scannable — never cluttered, striped, or ornamental.
 
@@ -8,11 +8,11 @@ This guidance follows the application expression defined in [System Spec](system
 
 ## 1. Dense-Surface Structure
 
-EverGray applications are workflow-oriented tools that frequently present lists of records, metadata panels, grouped properties, and tabular data. These surfaces carry more information per square pixel than any other part of the interface. Their structure must preserve legibility under load without resorting to heavy visual chrome.
+EverGray Tech applications are workflow-oriented tools that frequently present lists of records, metadata panels, grouped properties, and tabular data. These surfaces carry more information per square pixel than any other part of the interface. Their structure must preserve legibility under load without resorting to heavy visual chrome.
 
 ### 1.1 Pattern Types
 
-Data-dense surfaces in EverGray applications fall into three structural categories. Each has distinct strengths, and the choice between them depends on content shape, comparison needs, and interaction model.
+Data-dense surfaces in EverGray Tech applications fall into three structural categories. Each has distinct strengths, and the choice between them depends on content shape, comparison needs, and interaction model.
 
 #### Table Layout
 
@@ -193,7 +193,7 @@ When users scan a column of similar values (dates, statuses, numbers), alignment
 
 ## 3. Density Posture
 
-EverGray applications must find the narrow band between "efficient" and "cramped." Dense surfaces should feel like refined instruments — information-rich without being noisy, compact without being compressed. The density posture is a defining characteristic of the system's premium technical tone.
+EverGray Tech applications must find the narrow band between "efficient" and "cramped." Dense surfaces should feel like refined instruments — information-rich without being noisy, compact without being compressed. The density posture is a defining characteristic of the system's premium technical tone.
 
 ### 3.1 Acceptable Compactness Range
 
@@ -256,7 +256,7 @@ Dividers in dense surfaces must be calibrated to provide structure without creat
 
 ### 3.4 What Premium Density Looks Like
 
-The goal is that an EverGray dense surface looks like it was designed by someone who understands information — not by someone filling a template.
+The goal is that an EverGray Tech dense surface looks like it was designed by someone who understands information — not by someone filling a template.
 
 **Premium density characteristics:**
 - Consistent vertical rhythm — every row is the same height, every gap is the same width.

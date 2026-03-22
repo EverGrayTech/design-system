@@ -1,7 +1,7 @@
 # Plan: Data-Dense Workspace Patterns Guidance
 
 ## Objective
-Define shared design-system guidance for lists, table-like layouts, row summaries, grouped metadata, and other data-dense workspace surfaces so EverGray applications can present operational information with consistent hierarchy, calm density, and precise interaction states.
+Define shared design-system guidance for lists, table-like layouts, row summaries, grouped metadata, and other data-dense workspace surfaces so EverGray Tech applications can present operational information with consistent hierarchy, calm density, and precise interaction states.
 
 ## Customer Value
 - Gives workflow-heavy products a reusable approach to dense information surfaces without sacrificing scanability
@@ -51,4 +51,4 @@ Define shared design-system guidance for lists, table-like layouts, row summarie
 - [x] Record-list hierarchy is easier to standardize across products
 - [x] Dense views remain calm and scan-friendly rather than cluttered or generic
 - [x] Interaction-state guidance is clear enough for selectable rows and inline actions to behave consistently
-- [x] The guidance clearly supports Plot Your Path plan 30 and future EverGray workflow-heavy tools
+- [x] The guidance clearly supports Plot Your Path plan 30 and future EverGray Tech workflow-heavy tools

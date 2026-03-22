@@ -1,7 +1,7 @@
 # Plan: Status, Priority, and Decision Signals Guidance
 
 ## Objective
-Define shared design-system guidance for compact status, priority, urgency, and decision-support signals so EverGray applications can represent operational state consistently, accessibly, and without relying on noisy or color-only treatments.
+Define shared design-system guidance for compact status, priority, urgency, and decision-support signals so EverGray Tech applications can represent operational state consistently, accessibly, and without relying on noisy or color-only treatments.
 
 ## Customer Value
 - Gives Plot Your Path and future workflow tools a reusable visual grammar for status-heavy interfaces
@@ -52,4 +52,4 @@ Define shared design-system guidance for compact status, priority, urgency, and 
 - [x] Priority and urgency signals remain calm and controlled rather than noisy or alarmist
 - [x] Products no longer need to invent local visual grammar for status-heavy workflows
 - [x] Compact indicators are understandable without relying on color alone
-- [x] The guidance clearly supports Plot Your Path plan 30 and future EverGray workflow products
+- [x] The guidance clearly supports Plot Your Path plan 30 and future EverGray Tech workflow products

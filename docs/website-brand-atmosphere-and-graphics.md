@@ -1,6 +1,6 @@
 # Website Brand Atmosphere, Graphics, and Motion Restraint Guidance
 
-This document defines shared design-system guidance for website-only atmospheric brand treatments, graphic motifs, and restrained marketing motion. It enables EverGray web properties to feel cinematic within the system's boundaries without drifting into glow-heavy, glassy, or overly decorative styling.
+This document defines shared design-system guidance for website-only atmospheric brand treatments, graphic motifs, and restrained marketing motion. It enables EverGray Tech web properties to feel cinematic within the system's boundaries without drifting into glow-heavy, glassy, or overly decorative styling.
 
 This guidance applies exclusively to marketing and brand surfaces (`evergraytech.com` and related brand pages) — not to operational application interfaces. Applications follow the strictly functional posture defined in [System Spec](system-spec.md). Websites are permitted a more expressive range, but that range has clear boundaries.
 
@@ -133,7 +133,7 @@ Small abstract diagrams (flow arrows, connection graphs, hierarchy trees) used a
 
 #### Logo-Adjacent Framing
 
-Geometric line work or structural elements that frame or extend from the EverGray logo in hero contexts.
+Geometric line work or structural elements that frame or extend from the EverGray Tech logo in hero contexts.
 
 **Structure:**
 - Lines extending from logo corners or edges, creating a framwork or grid-like emanation.
@@ -153,7 +153,7 @@ Large-scale geometric patterns (grids, isometric planes, perspective grids) used
 
 ### 2.2 Graphic Character Boundaries
 
-All supporting graphics must pass this test: **Would this feel at home on a precision tooling manufacturer's website, or on a creative agency's portfolio?** EverGray graphics feel like the former — technical, structural, precise.
+All supporting graphics must pass this test: **Would this feel at home on a precision tooling manufacturer's website, or on a creative agency's portfolio?** EverGray Tech graphics feel like the former — technical, structural, precise.
 
 **Acceptable character:**
 - Geometric, angular, grid-aligned.
@@ -172,7 +172,7 @@ All supporting graphics must pass this test: **Would this feel at home on a prec
 
 ## 3. Motion Restraint for Marketing Surfaces
 
-Website motion creates presence and polish. But motion on EverGray surfaces must feel like precision engineering — not spectacle. Every animation earns its existence by improving comprehension or creating a measured sense of quality.
+Website motion creates presence and polish. But motion on EverGray Tech surfaces must feel like precision engineering — not spectacle. Every animation earns its existence by improving comprehension or creating a measured sense of quality.
 
 ### 3.1 Permitted Motion Types
 
