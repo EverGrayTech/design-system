@@ -73,10 +73,37 @@ For integration instructions, see the [Consumption Guide](docs/consumption-guide
 pnpm install
 ```
 
+## Releasing
+
+### Bump the version number
+```sh
+npm version minor   # or patch/major
+```
+
 ### Build generated outputs
 
 ```sh
 pnpm build
+pnpm pack --dry-run
+```
+
+### Publish the updates
+
+```sh
+npm publish
+git push
+git push --tags
+```
+
+### Consumer adoption
+
+```sh
+pnpm up @evergraytech/design-system
+```
+
+OR force update
+```sh
+pnpm add @evergraytech/design-system@<VERSION>
 ```
 
 This generates consumable token outputs under `dist/`:
